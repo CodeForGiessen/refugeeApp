@@ -1,0 +1,16 @@
+{
+  "extends": "../.eslintrc",
+  "env": {
+    "node": false,
+    "browser": true
+  },
+  "globals": {
+    "angular": true,
+    "ionic": true,
+    "localforage": true,
+    "cordova": true
+  },
+  "rules": {
+    "no-console": 1
+  }
+}

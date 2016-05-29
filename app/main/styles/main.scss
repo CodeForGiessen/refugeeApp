@@ -1,0 +1,72 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+*/
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #4a87ee !default;
+$calm:                            #43cee6 !default;
+$balanced:                        #66cc33 !default;
+$energized:                       #f0b840 !default;
+$assertive:                       #ef4e3a !default;
+$royal:                           #8a6de9 !default;
+$dark:                            #444 !default;
+
+// The path for our ionicons font files, relative to the built & temporary main.css
+$ionicons-font-path: "../assets/fonts" !default;
+
+// Include all of Ionic
+@import "../../bower_components/ionic/scss/ionic";
+
+$primary-color: #16a085;
+$secondary-color: #FFFFFF;
+$accent-color: #555555;
+$secondary-accent-color: #CCCCCC;
+
+body {
+  height: auto;
+  min-height: 100%;
+}
+
+/*Collapsible List*/
+.list {
+  .item {
+    .item-accordion {
+      line-height: 38px;
+      padding-top: 0;
+      padding-bottom: 0;
+      transition: 0.09s all linear;
+    }
+  }
+}
+
+.list .item.item-accordion.ng-hide {
+  line-height: 0px;
+}
+
+.list .item.item-accordion.ng-hide-add,
+.list .item.item-accordion.ng-hide-remove {
+  display: block !important;
+}
+
+/*Map options*/
+.map {
+  .scroll, .angular-leaflet-map {
+    height: 100%;
+  }
+}
+
+.about-developer {
+  .logo {
+    float: right;
+    width: 30%;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+

@@ -1,0 +1,128 @@
+@import "main";
+
+/* Utilities */
+.link {
+  color: #116262;
+  font-weight: bold;
+}
+
+
+/* General
+==================================*/
+h1 {
+  color: $secondary-color;
+  /*text-shadow: 0 1px 0px #000;*/
+  font-size: 42px;
+}
+
+h4 {
+  color: #116262;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+h4:first-child {
+  border-top: none;
+  padding-top: initial;
+}
+
+.title-bordered {
+  border-top: solid 2px #bbb;
+  padding-top: 30px;
+}
+
+p {
+  color: $accent-color;
+  margin: 0 0 25px;
+}
+
+.no-border {
+  border: none;
+}
+
+.static {
+  position: static;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.border-top {
+  border-top: solid 1px $secondary-accent-color;
+  padding-top: 30px;
+}
+
+.blue-grey-900 {
+  background-color: #263238 !important;
+  color: $secondary-color;
+}
+
+/* Menu */
+.menu .bar.bar-header.expanded {
+  background-image: url('../assets/images/newmaterial.jpg');
+  background-size: 120%;
+  background-position: 0%;
+  transition: all .5s ease-in-out;
+}
+
+.menu.menu-left * {
+  font-weight: bold;
+}
+
+.item-radio input:checked ~ .item-content {
+  background: transparent;
+}
+
+.menu-open .ion-navicon {
+  transform: rotate(-360deg);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.menu-open .ion-navicon:before {
+  content: "\f2ca";
+}
+
+.item.item-radio .radio-icon {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.item.item-radio:active .radio-icon {
+  opacity: 0;
+  transform: scale(1.6);
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+.directions.button-bar {
+  margin: 0 auto;
+  width: 33.333%;
+}
+
+.directions.button-bar button {
+  line-height: 26px;
+}
+
+.ion-arrow-right-c.top-left:before {
+  transform: rotate(-135deg);
+}
+
+.ion-arrow-right-c.top-right:before {
+  transform: rotate(-45deg);
+}
+
+.ion-arrow-right-c.bottom-left:before {
+  transform: rotate(-225deg);
+}
+
+.ion-arrow-right-c.bottom-right:before {
+  transform: rotate(45deg);
+}
+
+.startPage {
+  background-image: url('../assets/images/Giessen_zeughaus.jpg');
+  background-size: cover;
+}

@@ -1,0 +1,16 @@
+<ion-view view-title="{{'DASH_TITLE'|translate}}">
+  <!-- do you want padding? -->
+  <ion-content class="padding">
+    <h2 class="text-center">{{'WELCOME_TITLE'|translate}}</h2>
+    <!-- content goes here -->
+    <ion-list>
+      <ion-item class="item item-divider">
+        {{ctrl.getMotd.title}}
+      </ion-item>
+      <ion-item class="item item-text-wrap">
+        {{ctrl.getMotd.text}}
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,73 @@
+<ion-side-menus enable-menu-with-back-views="false">
+
+  <!-- CONTENT -->
+  <ion-side-menu-content>
+
+    <!-- header bar -->
+    <!-- the nav bar will be updated as we navigate between views -->
+    <ion-nav-bar class="bar-energized">
+      <!-- back button, shown if applicable -->
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+      <!-- nav button, shown if applicable -->
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+      <ion-nav-buttons side="right" >
+        <button class="button button-icon button-clear ion-android-more-vertical" ng-click="openPopover($event)"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <!-- ROUTING INJECTED HERE: pageContent -->
+    <ion-nav-view name="pageContent"></ion-nav-view>
+
+  </ion-side-menu-content>
+
+  <!-- SIDEMENU -->
+  <ion-side-menu side="left">
+
+    <!-- menu header -->
+    <ion-header-bar class="bar-energized">
+      <h1 class="title">Refugees Giessen</h1>
+    </ion-header-bar>
+
+    <!-- menu content -->
+    <ion-content>
+      <ion-list>
+        <ion-item menu-close ui-sref="main.dashboard">
+          <i class="icon ion-android-home"></i> {{'DASH_TITLE'|translate}}
+        </ion-item>
+        <ion-item menu-close ui-sref="main.guideline">
+          <i class="icon ion-android-bulb"></i> {{'GUIDE_TITLE'|translate}}
+        </ion-item>
+        <ion-item menu-close ui-sref="main.map">
+          <i class="icon ion-android-map"></i> {{'MAP_TITLE'|translate}}
+        </ion-item>
+        <ion-item menu-close ui-sref="main.info">
+          <i class="icon ion-android-list"></i> {{'INFO_TITLE'|translate}}
+        </ion-item>
+        <ion-item menu-close ui-sref="main.about">
+          <i class="icon ion-android-people"></i> {{'ABOUT_TITLE'|translate}}
+        </ion-item>
+      </ion-list>
+    </ion-content>
+
+  </ion-side-menu>
+
+</ion-side-menus>
+
+<script id="popover.html" type="text/ng-template">
+  <ion-popover-view>
+    <ion-list>
+      <ion-item class="item-icon-left"
+                ng-click="loadContent();popover.hide()">
+        <i class="icon ion-android-download"></i> Update Content
+      </ion-item>
+      <ion-item class="item-icon-left"
+                ng-click="openModal();popover.hide()">
+        <i class="icon ion-android-globe"></i> Change Language
+      </ion-item>
+    </ion-list>
+  </ion-popover-view>
+</script>

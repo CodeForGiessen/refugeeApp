@@ -1,0 +1,11 @@
+<ion-view view-title="{{'INFO_TITLE'|translate}}">
+  <ion-content>
+    <ion-list ng-repeat="info in infos">
+      <ion-item class="item-thumbnail-left" ui-sref="main.info-detail({index: $index})">
+        <img src="main/assets/images/small-logo1.jpg">
+        <h2>{{info.title}}</h2>
+        <p>{{info.subtitle}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,30 @@
+{
+  "generator-m-ionic": {
+    "answers": {
+      "appName": "Refugees Giessen",
+      "appId": "de.codefor.giessen.RefugeeApp",
+      "ionicCss": false,
+      "bowerPackages": [
+        "angular-dynamic-locale#~0.1.27",
+        "angular-translate#~2.11.0",
+        "angular-translate-loader-static-files#~2.11.0",
+        "localforage#~1.4.0"
+      ],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "plugins": [
+        "cordova-plugin-device",
+        "cordova-plugin-inappbrowser",
+        "ionic-plugin-keyboard",
+        "cordova-plugin-network-information",
+        "cordova-plugin-splashscreen"
+      ],
+      "appModule": "refugeesGiessen",
+      "ecosystems": [
+        "ionic-platform"
+      ]
+    }
+  }
+}
