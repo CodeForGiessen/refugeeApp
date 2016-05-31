@@ -11,7 +11,7 @@
 
     <ion-list>
       <div ng-repeat="info in infos[index].category">
-        <ion-item class="item-stable"
+        <ion-item class="grey lighten-4"
                   ng-click="toggleGroup(info)"
                   ng-class="{active: isGroupShown(info)}">
           <i class="icon" ng-class="isGroupShown(info) ? 'ion-minus' : 'ion-plus'"></i>
@@ -23,7 +23,7 @@
                   ng-show="isGroupShown(info)">
           <h3>{{item.title}}</h3>
           <p ng-hide="!item.location"><i class="icon ion-android-pin"></i> {{item.location}}</p>
-          <p ng-hide="!item.tel"><i class="icon ion-android-call"></i> {{item.tel}}<div class="item-button-right"><button class="button button-positive"><i class="icon ion-android-call"></i></button></div></p>
+          <p ng-hide="!item.tel"><i class="icon ion-android-call"></i> {{item.tel}}<div class="item-button-right"><button class="button teal"><i class="icon ion-android-call white-text"></i></button></div></p>
           <p ng-hide="!item.url"><i class="icon ion-android-open"></i><a href="javascript:void(0)" ng-click="openLink('{{item.url}}')"> {{item.url}}</a></p>
         </ion-item>
       </div>

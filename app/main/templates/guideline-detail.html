@@ -1,8 +1,10 @@
 <ion-view view-title="{{guideTitle}}">
   <ion-content>
-    <div class="list card" ng-repeat="guide in guides" ng-show="guide.category===index">
-      <div ng-repeat="guideline in guide.guidelines">
-        <div class="item-text-wrap">{{guideline.text}}</div>
+    <div class="list">
+      <div class="card-panel grey lighten-4" ng-repeat="guide in guides" ng-show="guide.category===index">
+        <div ng-repeat="guideline in guide.guidelines">
+          <div class="item-text-wrap">{{guideline.text}}</div>
+        </div>
       </div>
     </div>
   </ion-content>

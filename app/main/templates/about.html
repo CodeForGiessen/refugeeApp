@@ -1,7 +1,7 @@
 <ion-view view-title="{{'ABOUT_TITLE'|translate}}">
-  <ion-content ng-controller="AboutCtrl">
+  <ion-content>
     <div class="list card">
-      <div class="item item-divider">
+      <div class="item item-divider teal white-text">
         {{'FEEDBACK_CARD_TITLE'|translate}}
       </div>
       <div class="item item-text-wrap">
@@ -30,7 +30,7 @@
               <textarea name="message" cols="35" rows="5"></textarea>
             </label>
             <span class="error" ng-show="feedbackForm.input.$error.required">Please check your input!</span>
-            <button class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1">
+            <button class="button button-block teal lighten-2 white-text">
               {{'FEEDBACK_CARD_BUTTON'|translate}}
             </button>
           </div>
@@ -38,7 +38,7 @@
       </div>
     </div>
     <div class="list card">
-      <div class="item item-divider">
+      <div class="item item-divider teal white-text">
         <strong>Über die App</strong>
       </div>
       <div class="item item-text-wrap about-developer">
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="list card balanced-100-bg">
-      <div class="item item-divider">
+      <div class="item item-divider teal white-text">
         {{'DEVELOPER_CARD_TITLE'|translate}}
       </div>
       <div class="item item-text-wrap" ng-repeat="contributor in contributors | orderBy: 'name'">
@@ -105,7 +105,7 @@
       </div>
     </div>
     <div class="list card">
-      <div class="item item-divider">
+      <div class="item item-divider teal white-text">
         <strong>Impressum</strong>
       </div>
       <div class="item item-text-wrap">

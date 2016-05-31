@@ -15,7 +15,7 @@ angular.module('main')
       var newDate = date.getDay();
 
 
-      if (currentDate !== newDate) {
+      if (currentDate !== newDate && localStorage.getItem('categories')) {
         $scope.langKey = Guidelineservice.getLangKey();
         $scope.guides = Guidelineservice.findAllGuidelines();
         $scope.categories = Guidelineservice.findAllCategories();
@@ -39,17 +39,15 @@ angular.module('main')
         var curDate = dateNow.getDay();
         localStorage.setItem('currentDate', curDate);
         localStorage.setItem('motd', JSON.stringify(result));
+        return result;
       } else {
         return Guidelineservice.findMotd();
       }
-      return result;
     };
 
-    this.getMotd = getMotd();
-    //$log.log(this.getMotd);
+    $scope.getMotd = getMotd();
 
-
-    //$scope.$on('$ionicView.enter', getMotd);
+    $scope.$on('$ionicView.loaded', getMotd);
 
     /*$scope.$on('$ionicView.enter', function(){
      var result = {title: '', text: ''};

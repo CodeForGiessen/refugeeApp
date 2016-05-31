@@ -7,7 +7,6 @@ angular.module('main', [
   'pascalprecht.translate',
   'leaflet-directive',
   'toastr'
-  // TODO: load other modules selected during generation
 ])
 .config(function ($stateProvider, $urlRouterProvider, $translateProvider, toastrConfig) {
 
