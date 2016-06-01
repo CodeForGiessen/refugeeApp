@@ -105,7 +105,7 @@ angular.module('main', [
       views: {
         'pageContent': {
           templateUrl: 'main/templates/start.html',
-          controller: 'DashCtrl as ctrl'
+          controller: 'StartCtrl as ctrl'
         }
       }
     });

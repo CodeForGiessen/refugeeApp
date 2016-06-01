@@ -1,6 +1,6 @@
 'use strict';
 
-describe('module: main, controller: UserCtrl', function () {
+describe('module: main, controller: StartCtrl', function () {
 
   // load the controller's module
   beforeEach(module('main'));
@@ -8,13 +8,13 @@ describe('module: main, controller: UserCtrl', function () {
   beforeEach(module('ngHtml2Js'));
 
   // instantiate controller
-  var UserCtrl;
+  var StartCtrl;
   beforeEach(inject(function ($controller) {
-    UserCtrl = $controller('UserCtrl');
+    StartCtrl = $controller('StartCtrl');
   }));
 
   it('should do something', function () {
-    expect(!!UserCtrl).toBe(true);
+    expect(!!StartCtrl).toBe(true);
   });
 
 });

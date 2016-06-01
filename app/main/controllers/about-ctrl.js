@@ -1,12 +1,36 @@
 'use strict';
 angular.module('main')
-.controller('AboutCtrl', function ($scope, $window, $ionicPopup) {
+.controller('AboutCtrl', function ($scope, $window, $ionicPopup, $log) {
+
+  this.formdata = [
+    {
+      email: ''
+    },
+    {
+      rating: -1
+    },
+    {
+      message: ''
+    }
+  ];
+
+  /**
+   *
+   */
+  this.sendFeedback = function () {
+    $log.log(this.formdata.email);
+    $log.log(this.formdata.rating);
+    $log.log(this.formdata.message);
+
+    //todo cordova device information abfragen und zusammen mit den form daten zum server senden
+    //todo danach sollten die input felder wieder gelöscht werden
+  };
 
   /**
    *
    * @param link
    */
-  $scope.openLink = function (link) {
+  this.openLink = function (link) {
     if (link) {
       $window.open(link, '_system');
     }
@@ -28,7 +52,7 @@ angular.module('main')
   /**
    *
    */
-  $scope.sendMail = function () {
+  this.sendMail = function () {
     if ($window.cordova && cordova.plugins.email) {
       cordova.plugins.email.open({
         to: 'flo@floriankolb.de',

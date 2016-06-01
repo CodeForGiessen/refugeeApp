@@ -25,6 +25,17 @@ angular.module('main')
       return JSON.parse(guides);
     };
 
+      /**
+       *
+       * @param catID
+       */
+    this.findGuidelinesByCatID = function (catID) {
+      var guidelines = localStorage.getItem('guidelines_' + this.getLangKey());
+      return JSON.parse(guidelines).filter(function (guideline) {
+        return guideline.category === catID;
+      });
+    };
+
     /**
      *
      */

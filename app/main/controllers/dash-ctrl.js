@@ -1,12 +1,15 @@
 'use strict';
 angular.module('main')
-  .controller('DashCtrl', function ($scope, $q, Guidelinedata, Guidelineservice, $state, $ionicLoading, $translate, $ionicHistory, toastr) {
+  .controller('DashCtrl', function ($scope, $q, Guidelineservice) {
 
-    $scope.langKey = '';
-    $scope.categories = {};
-    $scope.guides = {};
+    $scope.langKey = Guidelineservice.getLangKey();
+    $scope.guides = Guidelineservice.findAllGuidelines();
+    $scope.categories = Guidelineservice.findAllCategories();
 
-    //todo: nur beim starten der app überprüfen und motd eintragen
+    /**
+     *
+     * @returns {{title: string, text: string}}
+     */
     var getMotd = function () {
       var result = {title: '', text: ''};
       var catID = '';
@@ -14,21 +17,11 @@ angular.module('main')
       var currentDate = localStorage.getItem('currentDate');
       var newDate = date.getDay();
 
+      if (newDate != currentDate) {
 
-      if (currentDate !== newDate && localStorage.getItem('categories')) {
-        $scope.langKey = Guidelineservice.getLangKey();
-        $scope.guides = Guidelineservice.findAllGuidelines();
-        $scope.categories = Guidelineservice.findAllCategories();
         var rand = Math.floor((Math.random() * $scope.guides.length));
         result.text = $scope.guides[rand].guidelines[0].text;
         catID = $scope.guides[rand].category;
-        /*for (var i = 0; i < $scope.guidelines.length; i++) {
-         if ($scope.guidelines[i].guidelines[0].motd_flag === true) {
-         result.text = $scope.guidelines[i].guidelines[0].text;
-         catID = $scope.guidelines[i].category;
-         console.log('if');
-         }
-         }*/
 
         for (var j = 0; j < $scope.categories.length; j++) {
           if ($scope.categories[j]._id === catID) {
@@ -69,40 +62,4 @@ angular.module('main')
      }
      $scope.getMotd = result;
      });*/
-
-    /**
-     *
-     * @param key which is used for the translate module
-     */
-    this.setLang = function (key) {
-      var targetState = 'main.dashboard';
-      window.localStorage.setItem('defaultState', targetState);
-
-      $translate.use(key)
-        .then(function (key) {
-          $ionicLoading.show();
-
-          $q.all([
-            Guidelinedata.getAllCategories(),
-            Guidelinedata.getAllGuidesToLang(key)
-          ])
-            .then(function (res) {
-              var cat = res[0];
-              var guides = res[1];
-              $scope.categories = cat;
-              $scope.guides = guides;
-            })
-            .finally(function () {
-              $ionicLoading.hide();
-              $state.go(targetState);
-            });
-
-          $ionicHistory.nextViewOptions({
-            disableAnimate: true,
-            historyRoot: true
-          });
-        }, function (key) {
-          toastr.error('Ups...can not set your Language to ' + key + '!', 'Error');
-        });
-    };
   });

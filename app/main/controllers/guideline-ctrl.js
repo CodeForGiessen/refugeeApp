@@ -2,16 +2,11 @@
 angular.module('main')
   .controller('GuidelineCtrl', function ($scope, $q, Guidelineservice, $state, $ionicLoading) {
 
-    $ionicLoading.show();
-    $scope.guides = Guidelineservice.findAllGuidelines();
+    this.guideTitle = $state.params.title;
+    var index = $state.params.idx;
+    this.guides = Guidelineservice.findGuidelinesByCatID(index);
 
-    $scope.guideTitle = $state.params.title;
-    $scope.index = $state.params.idx;
-
-    //$scope.langKey = GuideLineService.getLangKey();
-    //$scope.categories = GuideLineService.findAllCategories();
-
-    $scope.catImages = [
+    this.catImages = [
       {
         path: 'main/assets/images/catImg/barista.jpeg'
       },
