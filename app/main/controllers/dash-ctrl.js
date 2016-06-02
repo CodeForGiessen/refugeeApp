@@ -1,10 +1,11 @@
 'use strict';
 angular.module('main')
-  .controller('DashCtrl', function ($scope, $q, Guidelineservice) {
+  .controller('DashCtrl', function ($scope, $q, Guidelineservice, $log) {
 
     $scope.langKey = Guidelineservice.getLangKey();
-    $scope.guides = Guidelineservice.findAllGuidelines();
-    $scope.categories = Guidelineservice.findAllCategories();
+     $scope.guides = Guidelineservice.findAllGuidelines();
+     $scope.categories = Guidelineservice.findAllCategories();
+
 
     /**
      *
@@ -18,6 +19,26 @@ angular.module('main')
       var newDate = date.getDay();
 
       if (newDate != currentDate) {
+
+        $q.all([
+          Guidelineservice.getLangKey(),
+          Guidelineservice.findAllGuidelines(),
+          Guidelineservice.findAllCategories()
+        ])
+          .then(function (res) {
+            var lang = res[0];
+            var guides = res[1];
+            var cat = res[2];
+            $scope.langKey = lang;
+            $scope.guides = guides;
+            $scope.categories = cat;
+          });
+
+          /*//todo mit hilfe eines firststart flags überprüfen...funktioniert nur ab und zu
+          $scope.langKey = Guidelineservice.getLangKey();
+          $scope.guides = Guidelineservice.findAllGuidelines();
+          $scope.categories = Guidelineservice.findAllCategories();*/
+
 
         var rand = Math.floor((Math.random() * $scope.guides.length));
         result.text = $scope.guides[rand].guidelines[0].text;

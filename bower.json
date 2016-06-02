@@ -16,7 +16,8 @@
     "angular-leaflet-directive": "^0.10.0",
     "leaflet.markercluster": "^0.5.0",
     "angular-toastr": "^1.7.0",
-    "Materialize": "materialize#^0.97.6"
+    "Materialize": "materialize#^0.97.6",
+    "ionic-rating": "^0.3.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.0"

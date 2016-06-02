@@ -5,32 +5,35 @@
         {{'FEEDBACK_CARD_TITLE'|translate}}
       </div>
       <div class="item item-text-wrap">
-        <form name="feedbackForm">
+        <form name="feedbackForm" id="feedbackForm" ng-submit="ctrl.sendFeedback()">
           <div class="list">
             <div class="input-field">
               <input type="email" id="email" class="validate" ng-model="ctrl.formdata.email">
               <label for="email">Email</label>
             </div>
-            <div class="item range range-positive">
+            <!--<div class="item range range-positive">
               <i class="icon ion-android-star-outline">
               </i>
-              <input type="range" name="volume" min="0" max="100" value="0" required ng-model="ctrl.formdata.rating">
+              <input type="range" name="volume" min="0" max="100" value="0" ng-model="ctrl.formdata.rating">
               <i class="icon ion-star"></i>
+            </div>-->
+            <div>
+              <rating class="rating-block" ng-model="ctrl.formdata.rating" max="ctrl.rating.max"></rating>
             </div>
             <div class="input-field">
-            <textarea id="textarea" class="materialize-textarea" ng-model="ctrl.formdata.message"></textarea>
+              <textarea id="textarea" class="materialize-textarea" ng-model="ctrl.formdata.text"></textarea>
               <label for="textarea">{{'FEEDBACK_CARD_MESSAGE_PLACEHOLDER'|translate}}</label>
-              </div>
-            <button class="button button-block teal lighten-2 white-text" ng-click="ctrl.sendFeedback()">
-              {{'FEEDBACK_CARD_BUTTON'|translate}}
-            </button>
+            </div>
+            <input type="submit" id="submit" value="{{'FEEDBACK_CARD_BUTTON'|translate}}"
+                   class="button button-block teal lighten-2 white-text">
           </div>
         </form>
+        <p>Device: {{ctrl.deviceData}}</p>
       </div>
     </div>
     <div class="list card">
       <div class="item item-divider teal white-text">
-        <strong>Über die App</strong>
+        <strong>{{'APP_CARD_TITLE'| translate}}</strong>
       </div>
       <div class="item item-text-wrap about-developer">
         <div class="logo">

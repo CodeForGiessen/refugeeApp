@@ -126,3 +126,12 @@ p {
   background-image: url('../assets/images/Giessen_zeughaus.jpg');
   background-size: cover;
 }
+
+.rating-block {
+  display: inline-block;
+}
+
+.rating-block ~ .button {
+  line-height:30px;
+  min-height:0;
+}

@@ -1,6 +1,9 @@
 'use strict';
 angular.module('main')
-.controller('StartCtrl', function ($translate, $q, $ionicLoading, $state, $scope, Guidelinedata, $ionicHistory, toastr) {
+.controller('StartCtrl', function ($translate, $q, $ionicLoading, $state, $scope, Guidelinedata, $ionicHistory, toastr, $ionicSideMenuDelegate) {
+
+  //needed for start template
+  $ionicSideMenuDelegate.canDragContent(false);
 
   /**
    *
