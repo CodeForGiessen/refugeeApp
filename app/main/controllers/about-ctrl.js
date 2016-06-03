@@ -32,7 +32,7 @@ angular.module('main')
           }]
         });
       } else {
-        if ($window.cordova && cordova.plugins.device) {
+        if ($window.cordova) {
           this.deviceData = $cordovaDevice.getDevice();
 
           var promiseStats = $http.post(statsUrl, this.deviceData);
