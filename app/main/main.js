@@ -154,6 +154,7 @@ angular.module('main', [
       APP_CARD_TITLE: 'Über die App',
       DEVELOPER_CARD_TITLE: 'Entwickler',
       LICENSE_CARD_TITLE: 'Lizenz',
+      IMPRINT_CARD_TITLE: 'Impressum',
       CHANGE_LANG_INFO: 'Wenn sie die Sprache ändern wird der gesamte Inhalt neu heruntergeladen.'
     });
 
@@ -183,7 +184,8 @@ angular.module('main', [
       FEEDBACK_CARD_MESSAGE_PLACEHOLDER: 'Your message here...',
       DEVELOPER_CARD_TITLE: 'Developer',
       LICENSE_CARD_TITLE: 'License',
-      APP_CARD_TITLE: 'About the app',
+      APP_CARD_TITLE: 'About this app',
+      IMPRINT_CARD_TITLE: 'Imprint',
       CHANGE_LANG_INFO: 'Please notice! When you change the language then it will downloads new content.'
     });
 
