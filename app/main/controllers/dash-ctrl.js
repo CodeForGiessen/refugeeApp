@@ -3,8 +3,8 @@ angular.module('main')
   .controller('DashCtrl', function ($scope, $q, Guidelineservice, $log) {
 
     $scope.langKey = Guidelineservice.getLangKey();
-     $scope.guides = Guidelineservice.findAllGuidelines();
-     $scope.categories = Guidelineservice.findAllCategories();
+    $scope.guides = Guidelineservice.findAllGuidelines();
+    $scope.categories = Guidelineservice.findAllCategories();
 
 
     /**
@@ -34,10 +34,10 @@ angular.module('main')
             $scope.categories = cat;
           });
 
-          /*//todo mit hilfe eines firststart flags überprüfen...funktioniert nur ab und zu
-          $scope.langKey = Guidelineservice.getLangKey();
-          $scope.guides = Guidelineservice.findAllGuidelines();
-          $scope.categories = Guidelineservice.findAllCategories();*/
+        /*//todo mit hilfe eines firststart flags überprüfen...funktioniert nur ab und zu
+         $scope.langKey = Guidelineservice.getLangKey();
+         $scope.guides = Guidelineservice.findAllGuidelines();
+         $scope.categories = Guidelineservice.findAllCategories();*/
 
 
         var rand = Math.floor((Math.random() * $scope.guides.length));

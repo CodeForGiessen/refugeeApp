@@ -2,13 +2,8 @@
 angular.module('main')
   .controller('InfoCtrl', function ($scope, $state, $window) {
 
-    $(document).ready(function () {
-      $('.collapsible').collapsible({
-        accordion: true
-      });
-    });
-
     $scope.index = $state.params.index;
+    $scope.title = $state.params.title;
 
     $scope.infos = [
       {

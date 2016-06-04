@@ -135,3 +135,61 @@ p {
   line-height:30px;
   min-height:0;
 }
+
+/*flag icons*/
+.flag-icon-background {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+.flag-icon {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  display: inline-block;
+  width: 1.33333333em;
+  line-height: 1em;
+}
+.flag-icon:before {
+  content: "\00a0";
+}
+.flag-icon.flag-icon-squared {
+  width: 1em;
+}
+.flag-icon-af {
+  background-image: url(../assets/flags/4x3/af.svg);
+}
+.flag-icon-af.flag-icon-squared {
+  background-image: url(../assets/flags/1x1/af.svg);
+}
+.flag-icon-de {
+  background-image: url(../assets/flags/4x3/de.svg);
+}
+.flag-icon-de.flag-icon-squared {
+  background-image: url(../assets/flags/1x1/de.svg);
+}
+.flag-icon-fr {
+  background-image: url(../assets/flags/4x3/fr.svg);
+}
+.flag-icon-fr.flag-icon-squared {
+  background-image: url(../assets/flags/1x1/fr.svg);
+}
+.flag-icon-sy {
+  background-image: url(../assets/flags/4x3/sy.svg);
+}
+.flag-icon-sy.flag-icon-squared {
+  background-image: url(../assets/flags/1x1/sy.svg);
+}
+.flag-icon-tr {
+  background-image: url(../assets/flags/4x3/tr.svg);
+}
+.flag-icon-tr.flag-icon-squared {
+  background-image: url(../assets/flags/1x1/tr.svg);
+}
+.flag-icon-us {
+  background-image: url(../assets/flags/4x3/us.svg);
+}
+.flag-icon-us.flag-icon-squared {
+  background-image: url(../assets/flags/1x1/us.svg);
+}

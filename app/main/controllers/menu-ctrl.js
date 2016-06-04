@@ -5,6 +5,28 @@ angular.module('main')
     /**
      *
      */
+    $scope.setLangFlag = function () {
+      switch (Guidelineservice.getLangKey()){
+        case 'de_DE':
+              return 'flag-icon flag-icon-de';
+        case 'en_US':
+              return 'flag-icon flag-icon-us';
+        case 'ar_SY':
+              return 'flag-icon flag-icon-sy';
+        case 'fa_AF':
+              return 'flag-icon flag-icon-af';
+        case 'tr_TR':
+              return 'flag-icon flag-icon-tr';
+        case 'fr_FR':
+              return 'flag-icon flag-icon-fr';
+        default:
+          return 'flag-icon flag-icon-us';
+      }
+    };
+
+    /**
+     *
+     */
     $scope.loadContent = function () {
       var langKey = Guidelineservice.getLangKey();
       if ($window.cordova) {

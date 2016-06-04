@@ -80,7 +80,8 @@ angular.module('main', [
           }
         },
         params: {
-          index: -1
+          index: -1,
+          title: 'noTitle'
         }
       })
       .state('main.map', {
