@@ -1,6 +1,25 @@
 'use strict';
 angular.module('main')
-  .controller('DashCtrl', function ($scope, $q, Guidelineservice, $log) {
+  .controller('DashCtrl', function ($scope, $q, Guidelineservice, $log, $window, $cordovaDevice, $http, Config) {
+
+    document.addEventListener('deviceready', function () {
+      $log.log(window.localStorage.getItem('firstStart'));
+      if ($window.cordova && window.localStorage.getItem('firstStart') === 'true') {
+        $log.log('is first start');
+        this.deviceData = $cordovaDevice.getDevice();
+
+        return $http.post(Config.ENV.SERVER_URL + "/stats", {'device': this.deviceData})
+          .then (function (response) {
+            if(response.status === 201){
+              window.localStorage.setItem('firstStart', 'false');
+              return response.status;
+            }
+          },
+          function (response) {
+            return response.status;
+          });
+      }
+    });
 
     $scope.langKey = Guidelineservice.getLangKey();
     $scope.guides = Guidelineservice.findAllGuidelines();
@@ -19,7 +38,6 @@ angular.module('main')
       var newDate = date.getDay();
 
       if (newDate != currentDate) {
-
         $q.all([
           Guidelineservice.getLangKey(),
           Guidelineservice.findAllGuidelines(),
@@ -33,12 +51,6 @@ angular.module('main')
             $scope.guides = guides;
             $scope.categories = cat;
           });
-
-        /*//todo mit hilfe eines firststart flags überprüfen...funktioniert nur ab und zu
-         $scope.langKey = Guidelineservice.getLangKey();
-         $scope.guides = Guidelineservice.findAllGuidelines();
-         $scope.categories = Guidelineservice.findAllCategories();*/
-
 
         var rand = Math.floor((Math.random() * $scope.guides.length));
         result.text = $scope.guides[rand].guidelines[0].text;
@@ -61,26 +73,5 @@ angular.module('main')
 
     $scope.getMotd = getMotd();
 
-    $scope.$on('$ionicView.loaded', getMotd);
-
-    /*$scope.$on('$ionicView.enter', function(){
-     var result = {title: '', text: ''};
-     var catID = '';
-
-     if(localStorage.getItem('defaultState') === 'app.dashboard') {
-     for (var i = 0; i < guides.length; i++) {
-     if (guides[i].guidelines[0].motd_flag === true) {
-     result.text = guides[i].guidelines[0].text;
-     catID = guides[i].category;
-     }
-     }
-
-     for (var j = 0; j < categories.length; j++) {
-     if (categories[j]._id === catID) {
-     result.title = categories[j].text[langKey];
-     }
-     }
-     }
-     $scope.getMotd = result;
-     });*/
+    $scope.$on('$ionicView.enter', getMotd);
   });

@@ -63,15 +63,21 @@ p {
   background-image: url('../assets/images/newmaterial.jpg');
   background-size: 120%;
   background-position: 0%;
+  height: 150px;
   transition: all .5s ease-in-out;
 }
 
+.has-expanded-header {
+  top: 150px !important; }
+
+.menu .avatar {
+  top: 50px;
+  left: 20px;
+  height: 65px;
+  width: 65px; }
+
 .menu.menu-left * {
   font-weight: bold;
-}
-
-.item-radio input:checked ~ .item-content {
-  background: transparent;
 }
 
 .menu-open .ion-navicon {
@@ -82,6 +88,18 @@ p {
 
 .menu-open .ion-navicon:before {
   content: "\f2ca";
+}
+
+/* List
+==================================*/
+.content + .list {
+  padding-top: 0;
+}
+
+/* radio
+====================================*/
+.item-radio input:checked ~ .item-content {
+  background: transparent;
 }
 
 .item.item-radio .radio-icon {

@@ -17,14 +17,4 @@ describe('module: main, controller: DashCtrl', function () {
   it('should do something', function () {
     expect(!!DashCtrl).toBe(true);
   });
-
-  //todo: test motd when newdate is 0 and currentdate is 6
-  describe('getMotd', function () {
-    it('print a new motd when new date is 0(sunday) and currentDate 6(saturday)', function () {
-      var currentDate = 6;
-      var newDate = 0;
-      $scope.getMotd();
-      expect(localStorage.getItem('currentDate')).toEqual(0);
-    });
-  });
 });

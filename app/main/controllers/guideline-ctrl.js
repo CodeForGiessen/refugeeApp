@@ -86,7 +86,6 @@ angular.module('main')
         })
         .finally(function () {
           $ionicLoading.hide();
-          //$scope.$broadcast('scroll.refreshComplete');
         });
     };
 

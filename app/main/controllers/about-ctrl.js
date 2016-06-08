@@ -1,93 +1,73 @@
 'use strict';
 angular.module('main')
-  .controller('AboutCtrl', function ($scope, $window, $ionicPopup, $cordovaDevice, Config, $ionicLoading, $http, toastr) {
+  .controller('AboutCtrl', function ($scope, $window, $ionicPopup, $cordovaDevice, Config, $ionicLoading, $http, toastr, $translate) {
 
     this.ENV = Config.ENV;
-    var statsUrl = this.ENV.SERVER_URL + '/stats';
     var feedbackUrl = this.ENV.SERVER_URL + '/feedback';
 
     this.rating = {};
-    this.rating.max= 5;
+    this.rating.max = 5;
 
     this.formdata = {
       email: '',
       rating: -1,
       text: ' '
     };
-
-    this.deviceData = {};
-
+    
     /**
      *
      */
     this.sendFeedback = function () {
       //this.clearFields();
       if (this.formdata.email === undefined || this.formdata.rating === -1) {
-        $ionicPopup.alert({
-          title: 'Fehler',
-          template: 'Sie haben entweder keine Email oder keine Bewertung abgegeben.',
-          buttons: [{
-            text: 'Schließen',
-            type: 'button-positive'
-          }]
-        });
-      } else {
-        if ($window.cordova) {
-          this.deviceData = $cordovaDevice.getDevice();
-
-          var promiseStats = $http.post(statsUrl, this.deviceData);
-
-          promiseStats.success(function (status) {
-            if (status === 201) {
-              toastr.success('device data send');
-              return status;
-            }
-          })
-            .error(function (status) {
-              toastr.error('could not send device data');
-              return status;
+        $translate(['FORM_VERIFY_TITLE', 'FORM_VERIFY_TEXT', 'OK_BUTTON'])
+          .then(function (translations) {
+            $ionicPopup.alert({
+              title: translations.FORM_VERIFY_TITLE,
+              template: translations.FORM_VERIFY_TEXT,
+              buttons: [{
+                text: translations.OK_BUTTON,
+                type: 'button teal lighten-2 white-text'
+              }]
             });
-        } else {
-          $ionicPopup.alert({
-            title: 'Info',
-            template: 'Geräteinformationen können nicht abgefragt werden.',
-            buttons: [{
-              text: 'Schließen',
-              type: 'button-positive'
-            }]
           });
-        }
+      } else {
         $ionicLoading.show();
 
-        var promiseFeedback = $http.post(feedbackUrl, this.formdata);
-
-        promiseFeedback.success(function (status) {
-          if (status === 201) {
-            toastr.success('feedback data send');
-            return status;
-          }
-        })
-          .error(function (status) {
-            toastr.error('could not send feedback data');
-            return status;
-          })
+        return $http.post(feedbackUrl, {'feedback': this.formdata})
+          .then(function (response) {
+              if (response.status === 201) {
+                $translate(['TOAST_FEEDBACK_SEND'])
+                  .then(function (translations) {
+                    toastr.success(translations.TOAST_FEEDBACK_SEND);
+                  });
+                return response.status;
+              }
+            },
+            function (response) {
+              $translate(['TOAST_FEEDBACK_NOTSEND'])
+                .then(function (translations) {
+                  toastr.error(translations.TOAST_FEEDBACK_NOTSEND);
+                });
+              return response.status;
+            })
           .finally(function () {
             $ionicLoading.hide();
-          })
+          });
       }
     };
 
-      /**
-       *
-       */
+    /**
+     *
+     */
     this.clearFields = function () {
-      var formElement = document.getElementById('feedbackForm');
+      //var formElement = document.getElementById('feedbackForm');
       //var angularElement = angular.element(formElement);
       //angularElement.scope().clearFields();
-      var emailInput = document.getElementById('email');
-      var angularInput = angular.element(emailInput);
+      //var emailInput = document.getElementById('email');
+      //var angularInput = angular.element(emailInput);
 
-      var rating = document.getElementById('textarea').clear();
+      //var rating = document.getElementById('textarea').clear();
       //this.formdata = angular.copy(feedbackForm);
     };
 

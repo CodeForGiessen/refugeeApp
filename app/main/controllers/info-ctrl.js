@@ -200,17 +200,18 @@ angular.module('main')
      *
      * @param number
      */
-    $scope.openCall = function () {
+    $scope.openCall = function (number) {
       window.plugins.CallNumber.callNumber(number)
         .onSuccess(function () {
-          console.log('success');
+          //console.log('success');
         })
         .onError(function () {
-          console.log('error');
+          //todo: toastr ausgabe
+          //console.log('error');
         });
     };
 
-    /*
+    /**
      * if given group is the selected group, deselect it
      * else, select the given group
      */

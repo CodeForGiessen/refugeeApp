@@ -16,7 +16,8 @@
       </ion-nav-buttons>
       <ion-nav-buttons side="right" >
         <i class="{{setLangFlag()}}" ng-click="openModal()"></i>
-        <button class="button button-icon button-clear ion-android-more-vertical white-text" ng-click="openPopover($event)"></button>
+        <button class="button button-icon button-clear ion-android-download white-text" ng-click="loadContent()"></button>
+        <!--<button class="button button-icon button-clear ion-android-more-vertical white-text" ng-click="openPopover($event)"></button>-->
       </ion-nav-buttons>
     </ion-nav-bar>
 
@@ -29,12 +30,13 @@
   <ion-side-menu side="left">
 
     <!-- menu header -->
-    <ion-header-bar class="teal">
+    <ion-header-bar class="teal expanded">
+      <img src="main/assets/images/icon.png" class="avatar">
       <h1 class="title">Refugees Giessen</h1>
     </ion-header-bar>
 
     <!-- menu content -->
-    <ion-content>
+    <ion-content class="has-expanded-header">
       <ion-list>
         <ion-item menu-close ui-sref="main.dashboard">
           <i class="icon ion-android-home"></i> {{'DASH_TITLE'|translate}}

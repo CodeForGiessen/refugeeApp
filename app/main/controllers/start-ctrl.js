@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-.controller('StartCtrl', function ($translate, $q, $ionicLoading, $state, $scope, Guidelinedata, $ionicHistory, toastr, $ionicSideMenuDelegate) {
+.controller('StartCtrl', function ($translate, $q, $ionicLoading, $state, $scope, Guidelinedata, $ionicHistory, toastr, $ionicSideMenuDelegate, $log) {
 
   //needed for start template
   $ionicSideMenuDelegate.canDragContent(false);
@@ -37,7 +37,10 @@ angular.module('main')
           historyRoot: true
         });
       }, function (key) {
-        toastr.error('Ups...can not set your Language to ' + key + '!', 'Error');
+        $translate(['TOAST_CHANGED_LANG_NOT'])
+          .then(function (translations) {
+            toastr.error(translations.TOAST_CHANGED_LANG_NOT + key);
+          });
       });
   };
 });

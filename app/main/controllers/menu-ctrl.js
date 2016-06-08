@@ -1,31 +1,31 @@
 'use strict';
 angular.module('main')
-  .controller('MenuCtrl', function ($ionicPopover, $ionicModal, $scope, Guidelinedata, Guidelineservice, $window, $ionicPopup) {
+  .controller('MenuCtrl', function ($ionicPopover, $ionicModal, $scope, Guidelinedata, Guidelineservice, $window, $ionicPopup, $translate) {
 
     /**
-     *
+     * This function check the current language key and inject the proper flag-icon to the navbar.
      */
     $scope.setLangFlag = function () {
-      switch (Guidelineservice.getLangKey()){
+      switch (Guidelineservice.getLangKey()) {
         case 'de_DE':
-              return 'flag-icon flag-icon-de';
+          return 'flag-icon flag-icon-de';
         case 'en_US':
-              return 'flag-icon flag-icon-us';
+          return 'flag-icon flag-icon-us';
         case 'ar_SY':
-              return 'flag-icon flag-icon-sy';
+          return 'flag-icon flag-icon-sy';
         case 'fa_AF':
-              return 'flag-icon flag-icon-af';
+          return 'flag-icon flag-icon-af';
         case 'tr_TR':
-              return 'flag-icon flag-icon-tr';
+          return 'flag-icon flag-icon-tr';
         case 'fr_FR':
-              return 'flag-icon flag-icon-fr';
+          return 'flag-icon flag-icon-fr';
         default:
           return 'flag-icon flag-icon-us';
       }
     };
 
     /**
-     *
+     * Load new content from the server.
      */
     $scope.loadContent = function () {
       var langKey = Guidelineservice.getLangKey();
@@ -34,29 +34,42 @@ angular.module('main')
           Guidelinedata.getAllGuidesToLang(langKey);
           Guidelinedata.getAllCategories();
         } else {
-          var confirmPopup = $ionicPopup.confirm({
-            title: '{{"DOWN_CONTENT_TITLE"|translate}}',
-            template: '{{"DOWN_CONTENT_TEXT"|translate}}',
-            cancelText: '{{"CANCEL_BUTTON"|translate}}'
-          });
+          $translate(['DOWN_CONTETN_TITLE', 'DOWN_CONTENT_TEXT', 'CANCEL_BUTTON', 'OK_BUTTON'])
+            .then(function (translations) {
+              var confirmPopup = $ionicPopup.confirm({
+                title: translations.DOWN_CONTENT_TITLE,
+                template: translations.DOWN_CONTENT_TEXT,
+                buttons: [
+                  {
+                    text: translations.CANCEL_BUTTON,
+                    type: 'button teal lighten-4 white-text'
+                  },
+                  {
+                    text: translations.OK_BUTTON,
+                    type: 'button teal lighten-2 white-text'
+                  }]
+              });
 
-          confirmPopup.then(function (res) {
-          });
+              confirmPopup.then(function (res) {
+              });
+            });
         }
       } else {
-        Guidelinedata.getAllGuidesToLang('de_DE');
+        Guidelinedata.getAllGuidesToLang(langKey);
         Guidelinedata.getAllCategories();
       }
     };
 
     /**
-     *
+     * Check the internet connection and return connection type.
      */
     var checkConnection = function () {
-     return navigator.connection.type;
-     };
+      return navigator.connection.type;
+    };
 
-    // .fromTemplateUrl() method
+    /**
+     *
+     */
     $ionicPopover.fromTemplateUrl('popover.html', {
       scope: $scope
     }).then(function (popover) {
@@ -82,6 +95,9 @@ angular.module('main')
       // Execute action
     });
 
+    /**
+     *
+     */
     $ionicModal.fromTemplateUrl('main/templates/lang-modal.html', {
       scope: $scope,
       animation: 'slide-in-up'

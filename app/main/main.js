@@ -23,6 +23,7 @@ angular.module('main', [
       })
       .state('main.dashboard', {
         url: '/dashboard',
+        cache: false,
         views: {
           'pageContent': {
             templateUrl: 'main/templates/dashboard.html',
@@ -112,20 +113,15 @@ angular.module('main', [
         }
       });
 
-    $urlRouterProvider.otherwise(function ($injector, Init) {
+    $urlRouterProvider.otherwise(function ($injector) {
       var $state = $injector.get('$state');
+
+      if(!window.localStorage.getItem('firstStart')) {
+        window.localStorage.setItem('firstStart', 'true');
+      }
 
       var defaultState = window.localStorage.getItem('defaultState') || 'main.start';
       $state.go(defaultState);
-
-      /*var state = 'main.dashboard';
-
-      if (Init.isInitialRun()) {
-        Init.setInitialRun(false);
-        state = 'main.start'
-      }
-
-      $state.go(state);*/
     });
 
     //german translation
@@ -138,7 +134,7 @@ angular.module('main', [
       LANG_AF: 'فارسی',
       CHANGELANG_TITLE: 'Sprache ändern',
       DASH_TITLE: 'Übersicht',
-      GUIDE_TITLE: 'Verhaltensregeln',
+      GUIDE_TITLE: 'Leitfaden',
       MAP_TITLE: 'Karte',
       INFO_TITLE: 'Informationen',
       ABOUT_TITLE: 'Über',
@@ -156,7 +152,16 @@ angular.module('main', [
       DEVELOPER_CARD_TITLE: 'Entwickler',
       LICENSE_CARD_TITLE: 'Lizenz',
       IMPRINT_CARD_TITLE: 'Impressum',
-      CHANGE_LANG_INFO: 'Wenn sie die Sprache ändern wird der gesamte Inhalt neu heruntergeladen.'
+      CHANGE_LANG_INFO: 'Wenn sie die Sprache ändern wird der gesamte Inhalt neu heruntergeladen.',
+      FORM_VERIFY_TITLE: 'Fehler',
+      FORM_VERIFY_TEXT: 'Sie haben entweder keine Email oder keine Bewertung abgegeben.',
+      TOAST_FEEDBACK_SEND: 'Feedback wurde gesendet',
+      TOAST_FEEDBACK_NOTSEND: 'Fehler beim senden',
+      TOAST_CHANGED_LANG: 'Sprache erfolgreich geändert ',
+      TOAST_CHANGED_LANG_NOT: 'Sprache wurde nicht geändert ',
+      TOAST_DOWNLOAD_SUCCESS: 'Aktualisierung erfolgreich',
+      TOAST_DOWNLOAD_UPDATE: 'Alle Daten sind aktuell',
+      TOAST_DOWNLOAD_ERROR: 'Fehler beim laden der Daten'
     });
 
     //english translation
@@ -183,11 +188,20 @@ angular.module('main', [
       FEEDBACK_CARD_NAME: 'First Name',
       FEEDBACK_CARD_LASTNAME: 'Last Name',
       FEEDBACK_CARD_MESSAGE_PLACEHOLDER: 'Your message here...',
+      APP_CARD_TITLE: 'About this app',
       DEVELOPER_CARD_TITLE: 'Developer',
       LICENSE_CARD_TITLE: 'License',
-      APP_CARD_TITLE: 'About this app',
       IMPRINT_CARD_TITLE: 'Imprint',
-      CHANGE_LANG_INFO: 'Please notice! When you change the language then it will downloads new content.'
+      CHANGE_LANG_INFO: 'Please notice! When you change the language then it will downloads new content.',
+      FORM_VERIFY_TITLE: 'Error',
+      FORM_VERIFY_TEXT: 'Please check your email and/or rating',
+      TOAST_FEEDBACK_SEND: 'Feedback data send',
+      TOAST_FEEDBACK_NOTSEND: 'Could not send data',
+      TOAST_CHANGED_LANG: 'Successfully changed the language ',
+      TOAST_CHANGED_LANG_NOT: 'Language did not change ',
+      TOAST_DOWNLOAD_SUCCESS: 'Update complete',
+      TOAST_DOWNLOAD_UPDATE: 'Already up-to-date',
+      TOAST_DOWNLOAD_ERROR: 'Could not retrieve data'
     });
 
     //turkish translation
