@@ -1,32 +1,32 @@
-<ion-view view-title="InfoDetail">
+<ion-view view-title="{{title}}">
   <ion-content>
-    <!--<div class="list" ng-repeat="info in infos">
-      <div class="item item-divider">
-        {{info.title}}
-      </div>
-      <a class="item" href="#" ng-repeat="name in info.names">
-        {{name.title}}
-      </a>
-    </div>-->
-
     <ion-list>
       <div ng-repeat="info in infos[index].category">
-        <ion-item class="item-stable"
+        <ion-item class="teal white-text"
                   ng-click="toggleGroup(info)"
                   ng-class="{active: isGroupShown(info)}">
-          <i class="icon" ng-class="isGroupShown(info) ? 'ion-minus' : 'ion-plus'"></i>
-          &nbsp;
           {{info.group}}
         </ion-item>
-        <ion-item class="item-accordion item-text-wrap"
+        <ion-item class="item-text-wrap"
                   ng-repeat="item in info.items"
                   ng-show="isGroupShown(info)">
           <h3>{{item.title}}</h3>
           <p ng-hide="!item.location"><i class="icon ion-android-pin"></i> {{item.location}}</p>
-          <p ng-hide="!item.tel"><i class="icon ion-android-call"></i> {{item.tel}}<div class="item-button-right"><button class="button button-positive"><i class="icon ion-android-call"></i></button></div></p>
+          <p ng-hide="!item.tel"><i class="icon ion-android-call"></i> {{item.tel}}<div class="item-button-right"><button class="button teal" ng-click="openCall('{{item.tel}}')"><i class="icon ion-android-call white-text"></i></button></div></p>
           <p ng-hide="!item.url"><i class="icon ion-android-open"></i><a href="javascript:void(0)" ng-click="openLink('{{item.url}}')"> {{item.url}}</a></p>
         </ion-item>
       </div>
     </ion-list>
+   <!-- <ul class="collapsible" data-collapsible="accordion">
+        <li ng-repeat="info in infos[index].category">
+          <div class="collapsible-header teal white-text">{{info.group}}</div>
+          <div class="collapsible-body" ng-repeat="item in info.items">
+            <h3>{{item.title}}</h3>
+            <p ng-hide="!item.location"><i class="icon ion-android-pin"></i> {{item.location}}</p>
+            <p ng-hide="!item.tel"><i class="icon ion-android-call"></i><a href="javascript:void(0)" ng-click="openCall('{{item.tel}}')"> {{item.tel}}</a></p>
+            <p ng-hide="!item.url"><i class="icon ion-android-open"></i><a href="javascript:void(0)" ng-click="openLink('{{item.url}}')"> {{item.url}}</a></p>
+          </div>
+        </li>
+    </ul>-->
   </ion-content>
 </ion-view>

@@ -2,13 +2,74 @@
 angular.module('main')
   .controller('GuidelineCtrl', function ($scope, $q, Guidelineservice, $state, $ionicLoading) {
 
-    $scope.guides = Guidelineservice.findAllGuidelines();
+    this.guideTitle = $state.params.title;
+    var index = $state.params.idx;
+    this.guides = Guidelineservice.findGuidelinesByCatID(index);
 
-    $scope.guideTitle = $state.params.title;
-    $scope.index = $state.params.idx;
-
-    //$scope.langKey = GuideLineService.getLangKey();
-    //$scope.categories = GuideLineService.findAllCategories();
+    this.catImages = [
+      {
+        path: 'main/assets/images/catImg/barista.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/beach.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/chicago.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/cloudsOverMountain.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/coast.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/glacier.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/mountainHouse.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/mountainRiver.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/mountainSea.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/neuSchwanStein.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/oldTruck.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/skiLift.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/skyline.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/soccerStadium.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/strawbeeries.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/tipi.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/trains.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/trees.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/universum.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/water.jpeg'
+      },
+      {
+        path: 'main/assets/images/catImg/waterfall.jpeg'
+      }];
 
     var reload = function () {
       $ionicLoading.show();
@@ -25,7 +86,6 @@ angular.module('main')
         })
         .finally(function () {
           $ionicLoading.hide();
-          //$scope.$broadcast('scroll.refreshComplete');
         });
     };
 

@@ -4,7 +4,8 @@ angular.module('main')
 
     ENV: {
       /*inject-env*/
-      'SERVER_URL': 'http://homesvr.spdns.de:8080/api/v1'
+      'SERVER_URL': 'http://homesvr.spdns.de:8080/api/v1',
+    'TIMEOUT': '60000'
       /*endinject*/
     },
 

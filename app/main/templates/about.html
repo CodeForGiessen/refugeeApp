@@ -1,45 +1,39 @@
 <ion-view view-title="{{'ABOUT_TITLE'|translate}}">
-  <ion-content ng-controller="AboutCtrl">
+  <ion-content>
     <div class="list card">
-      <div class="item item-divider">
+      <div class="item item-divider teal white-text">
         {{'FEEDBACK_CARD_TITLE'|translate}}
       </div>
       <div class="item item-text-wrap">
-        <form name="feedbackForm">
+        <form name="feedbackForm" id="feedbackForm" ng-submit="ctrl.sendFeedback()">
           <div class="list">
-            <label class="item item-input item-floating-label">
-          <span class="input-label">
-            {{'FEEDBACK_CARD_NAME' | translate}}
-          </span>
-              <input type="text" placeholder="First Name" required>
-            </label>
-            <label class="item item-input item-floating-label">
-          <span class="input-label">
-            {{'FEEDBACK_CARD_LASTNAME'|translate}}
-          </span>
-              <input type="text" placeholder="Last Name" required>
-            </label>
-            <div class="item range range-positive">
-              <i class="icon ion-ios-star-outline">
-              </i>
-              <input type="range" name="volume" min="0" max="100" value="50" required>
-              <i class="icon ion-star"></i>
+            <div class="input-field">
+              <input type="email" id="email" class="validate" ng-model="ctrl.formdata.email">
+              <label for="email">Email</label>
             </div>
-            <label class="item item-input item-floating-label">
-              <span class="panel-bug-textarea">{{'FEEDBACK_CARD_MESSAGE_PLACEHOLDER'|translate}}</span>
-              <textarea name="message" cols="35" rows="5"></textarea>
-            </label>
-            <span class="error" ng-show="feedbackForm.input.$error.required">Please check your input!</span>
-            <button class="button button-block button-calm ink" data-ink-color="#9DEAFF" data-ink-opacity="1">
-              {{'FEEDBACK_CARD_BUTTON'|translate}}
-            </button>
+            <!--<div class="item range range-positive">
+              <i class="icon ion-android-star-outline">
+              </i>
+              <input type="range" name="volume" min="0" max="100" value="0" ng-model="ctrl.formdata.rating">
+              <i class="icon ion-star"></i>
+            </div>-->
+            <div>
+              <rating class="rating" ng-model="ctrl.formdata.rating" max="ctrl.rating.max"></rating>
+            </div>
+            <div class="input-field">
+              <textarea id="textarea" class="materialize-textarea" ng-model="ctrl.formdata.text"></textarea>
+              <label for="textarea">{{'FEEDBACK_CARD_MESSAGE_PLACEHOLDER'|translate}}</label>
+            </div>
+            <input type="submit" id="submit" value="{{'FEEDBACK_CARD_BUTTON'|translate}}"
+                   class="button button-block teal lighten-2 white-text">
           </div>
         </form>
+        <p>Device: {{ctrl.deviceData}}</p>
       </div>
     </div>
     <div class="list card">
-      <div class="item item-divider">
-        <strong>Über die App</strong>
+      <div class="item item-divider teal white-text">
+        <strong>{{'APP_CARD_TITLE'| translate}}</strong>
       </div>
       <div class="item item-text-wrap about-developer">
         <div class="logo">
@@ -51,14 +45,19 @@
           Diese App wurde von dem OK Lab in Gießen (CodeForGießen) entwickelt.
         </p>
         <p>
-          Wenn du Interesse hast, komme doch einfach bei unseren regelmäßigen Treffen vorbei. Weitere Informationen zu dem OK Lab in Gießen findest du auf unserer <a href="javascript:void(0);" ng-click="openLink('http://codefor.de/giessen/')">Webseite</a>.
+          Wenn du Interesse hast, komme doch einfach bei unseren regelmäßigen Treffen vorbei. Weitere Informationen zu
+          dem OK Lab in Gießen findest du auf unserer <a href="javascript:void(0);"
+                                                         ng-click="ctrl.openLink('http://codefor.de/giessen/')">Webseite</a>.
         </p>
         <p>
-          Du kommst nicht aus Mittelhessen bzw. Gießen? Kein Problem! Wahrscheinlich gibt es ein anderes OK Lab in deiner Nähe. Schau doch einfach mal auf der <a href="javascript:void(0);" ng-click="openLink('http://codefor.de/')">Code for Germany Seite</a>						vorbei.</p>
+          Du kommst nicht aus Mittelhessen bzw. Gießen? Kein Problem! Wahrscheinlich gibt es ein anderes OK Lab in
+          deiner Nähe. Schau doch einfach mal auf der <a href="javascript:void(0);"
+                                                         ng-click="ctrl.openLink('http://codefor.de/')">Code for Germany
+          Seite</a> vorbei.</p>
       </div>
     </div>
-    <div class="list card balanced-100-bg">
-      <div class="item item-divider">
+    <div class="list card">
+      <div class="item item-divider teal white-text">
         {{'DEVELOPER_CARD_TITLE'|translate}}
       </div>
       <div class="item item-text-wrap" ng-repeat="contributor in contributors | orderBy: 'name'">
@@ -66,8 +65,8 @@
         <p>{{contributor.task}}</p>
       </div>
     </div>
-    <div class="list card calm-100-bg">
-      <div class="item item-divider">
+    <div class="list card">
+      <div class="item item-divider teal white-text">
         {{'LICENSE_CARD_TITLE'|translate}}
       </div>
       <div class="item item-text-wrap">
@@ -75,7 +74,7 @@
         <p>
 
         <p>Copyright (c) 2015 Code for Gießen, <a href="javascript:void(0);"
-                                                  ng-click="openLink('http://codefor.de/giessen')">http://codefor.de/giessen/</a>
+                                                  ng-click="ctrl.openLink('http://codefor.de/giessen')">http://codefor.de/giessen/</a>
         </p>
 
         <p>Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -99,14 +98,14 @@
         <p><strong>Repositories</strong></p>
         <p>
           Service: <a href="javascript:void(0);"
-                      ng-click="openLink('https://github.com/CodeForGiessen/refugeeService')">https://github.com/CodeForGiessen/refugeeService</a><br>
-          App: <a href="javascript:void(0);" ng-click="openLink('https://github.com/CodeForGiessen/refugeeApp')">https://github.com/CodeForGiessen/refugeeApp</a>
+                      ng-click="ctrl.openLink('https://github.com/CodeForGiessen/refugeeService')">https://github.com/CodeForGiessen/refugeeService</a><br>
+          App: <a href="javascript:void(0);" ng-click="ctrl.openLink('https://github.com/CodeForGiessen/refugeeApp')">https://github.com/CodeForGiessen/refugeeApp</a>
         </p>
       </div>
     </div>
     <div class="list card">
-      <div class="item item-divider">
-        <strong>Impressum</strong>
+      <div class="item item-divider teal white-text">
+        <strong>{{'IMPRINT_CARD_TITLE'|translate}}</strong>
       </div>
       <div class="item item-text-wrap">
         <p>Angaben gemäß § 5 TMG</p>
@@ -120,7 +119,7 @@
         <p><strong>Kontakt:</strong> <br>
           Telefon: 0000-00000000<br>
           <!--E-Mail: <a href='javascript:void(0);' ng-click="sendMail()"><i class="icon ion-paper-airplane"></i></a>-->
-          E-Mail: <i class="icon ion-paper-airplane"></i><a href='javascript:void(0);' ng-click="sendMail()">flo@floriankolb.de</a>
+          E-Mail: <i class="icon ion-paper-airplane"></i><a href='javascript:void(0);' ng-click="ctrl.sendMail()">flo@floriankolb.de</a>
 
         </p>
         <p><strong>Haftungsausschluss und Datenschutzerklärung: </strong><br><br><strong>Haftung für Inhalte</strong>

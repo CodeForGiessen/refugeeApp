@@ -14,11 +14,11 @@
 
   <!-- build:css styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/flag-icon-css/css/flag-icon.min.css" />
   <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
   <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.css" />
   <link rel="stylesheet" href="bower_components/leaflet.markercluster/dist/MarkerCluster.Default.css" />
   <link rel="stylesheet" href="bower_components/angular-toastr/dist/angular-toastr.css" />
+  <link rel="stylesheet" href="bower_components/Materialize/bin/materialize.css" />
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -33,7 +33,7 @@
 
 <!-- the nav bar will be updated as we navigate between views -->
 <!-- <ion-nav-bar> can be removed when using sidemenu (contained in menu.html) -->
-<ion-nav-bar class="bar-calm">
+<ion-nav-bar class="teal">
   <ion-nav-back-button></ion-nav-back-button>
 </ion-nav-bar>
 <!-- the current view will be rendered in the <ion-nav-view> directive -->
@@ -62,27 +62,32 @@
 <script src="bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
 <script src="bower_components/leaflet.markercluster/dist/leaflet.markercluster-src.js"></script>
 <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/Materialize/bin/materialize.js"></script>
+<script src="bower_components/ionic-rating/ionic-rating.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
 <!-- build:js scripts/app.js -->
 <!-- inject:js -->
 <script src="main/main.js"></script>
-<script src="main/services/main-serv.js"></script>
 <script src="main/services/guidelineservice-serv.js"></script>
 <script src="main/services/guidelinedata-serv.js"></script>
-<script src="main/controllers/user-ctrl.js"></script>
+<script src="main/controllers/start-ctrl.js"></script>
 <script src="main/controllers/menu-ctrl.js"></script>
 <script src="main/controllers/map-ctrl.js"></script>
 <script src="main/controllers/language-ctrl.js"></script>
 <script src="main/controllers/info-ctrl.js"></script>
 <script src="main/controllers/guideline-ctrl.js"></script>
-<script src="main/controllers/debug-ctrl.js"></script>
 <script src="main/controllers/dash-ctrl.js"></script>
 <script src="main/controllers/about-ctrl.js"></script>
 <script src="main/constants/config-const.js"></script>
 <script src="app.js"></script>
 <!-- endinject -->
+<!-- endbuild -->
+</body>
+</html>
+-- endinject -->
 <!-- endbuild -->
 </body>
 </html>

@@ -11,11 +11,12 @@
     "angular-translate-loader-static-files": "~2.11.0",
     "localforage": "~1.4.0",
     "angular-translate-storage-local": "^2.11.0",
-    "flag-icon-css": "^2.3.1",
     "leaflet": "^0.7.7",
     "angular-leaflet-directive": "^0.10.0",
     "leaflet.markercluster": "^0.5.0",
-    "angular-toastr": "^1.7.0"
+    "angular-toastr": "^1.7.0",
+    "Materialize": "materialize#^0.97.6",
+    "ionic-rating": "^0.3.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.5.0"

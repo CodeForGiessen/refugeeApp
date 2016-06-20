@@ -3,6 +3,7 @@ angular.module('main')
   .controller('InfoCtrl', function ($scope, $state, $window) {
 
     $scope.index = $state.params.index;
+    $scope.title = $state.params.title;
 
     $scope.infos = [
       {
@@ -46,6 +47,13 @@ angular.module('main')
                 title: 'Notruf für Schwangere und Mütter mit Neugeborenen in Not',
                 location: '',
                 tel: '0800/4560789',
+                url: ''
+              },
+              {
+                spec: 'Nummer',
+                title: 'Testanrfu',
+                location: '',
+                tel: '0641/13097275',
                 url: ''
               }
             ]
@@ -192,17 +200,18 @@ angular.module('main')
      *
      * @param number
      */
-    $scope.openCall = function () {
-      /*window.plugins.CallNumber.callNumber(number)
+    $scope.openCall = function (number) {
+      window.plugins.CallNumber.callNumber(number)
         .onSuccess(function () {
-          console.log('success');
+          //console.log('success');
         })
         .onError(function () {
-          console.log('error');
-        });*/
+          //todo: toastr ausgabe
+          //console.log('error');
+        });
     };
 
-    /*
+    /**
      * if given group is the selected group, deselect it
      * else, select the given group
      */

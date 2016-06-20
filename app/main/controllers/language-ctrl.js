@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-  .controller('LanguageCtrl', function ($scope, $translate, Guidelinedata, toastr) {
+  .controller('LanguageCtrl', function ($scope, $translate, Guidelinedata, Guidelineservice, toastr) {
 
     /**
      *
@@ -11,10 +11,19 @@ angular.module('main')
         if (!localStorage.getItem('guidelines_' + key)) {
           Guidelinedata.getAllCategories();
           Guidelinedata.getAllGuidesToLang(key);
+          localStorage.removeItem('currentDate');
+        } else {
+          localStorage.removeItem('currentDate');
         }
-        toastr.info('You have changed the language to ' + key, 'Success');
+        $translate(['TOAST_CHANGED_LANG'])
+          .then(function (translations) {
+            toastr.success(translations.TOAST_CHANGED_LANG + key);
+          });
       }, function (key) {
-        toastr.error('Tried to set the language ' + key, 'Error');
+        $translate(['TOAST_CHANGED_LANG_NOT'])
+          .then(function (translations) {
+            toastr.error(translations.TOAST_CHANGED_LANG_NOT + key);
+          });
       });
     };
   });

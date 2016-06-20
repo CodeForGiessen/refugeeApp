@@ -9,12 +9,12 @@ describe('module: main, controller: DashCtrl', function () {
 
   // instantiate controller
   var DashCtrl;
+  var $scope = {};
   beforeEach(inject(function ($controller) {
-    DashCtrl = $controller('DashCtrl');
+    DashCtrl = $controller('DashCtrl', {$scope: $scope});
   }));
 
   it('should do something', function () {
     expect(!!DashCtrl).toBe(true);
   });
-
 });
