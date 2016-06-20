@@ -5,7 +5,7 @@ This project is a frontend application that works with the corresponding ![backe
 
 This project was generated with Generator-M-Ionic v1.8.0. For more info visit the [repository](https://github.com/mwaylabs/generator-m-ionic) or check out the README below.
 
-[![NPM version](http://img.shields.io/npm/v/generator-m-ionic.svg?style=flat-square)][npm-url]
+[![NPM version](http://img.shields.io/npm/v/generator-m-ionic.svg?style=flat-square)]
 
 #Contributing
 ##Installation
