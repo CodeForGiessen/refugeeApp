@@ -9,8 +9,10 @@ describe('module: main, controller: GuidelineCtrl', function () {
 
   // instantiate controller
   var GuidelineCtrl;
-  beforeEach(inject(function ($controller) {
-    GuidelineCtrl = $controller('GuidelineCtrl');
+  var scope;
+  beforeEach(inject(function ($controller, $rootScope) {
+    scope = $rootScope.$new();
+    GuidelineCtrl = $controller('GuidelineCtrl', {$scope: scope});
   }));
 
   it('should do something', function () {

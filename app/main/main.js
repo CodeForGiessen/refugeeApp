@@ -116,7 +116,7 @@ angular.module('main', [
     $urlRouterProvider.otherwise(function ($injector) {
       var $state = $injector.get('$state');
 
-      if(!window.localStorage.getItem('firstStart')) {
+      if (!window.localStorage.getItem('firstStart')) {
         window.localStorage.setItem('firstStart', 'true');
       }
 
@@ -275,5 +275,5 @@ angular.module('main', [
       newestOnTop: true,
       positionClass: 'toast-bottom-center',
       target: 'body'
-    })
+    });
   });

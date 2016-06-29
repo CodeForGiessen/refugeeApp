@@ -13,7 +13,6 @@ angular.module('main')
       rating: -1,
       text: ' '
     };
-    
     /**
      *
      */

@@ -9,12 +9,8 @@ describe('module: main, controller: MenuCtrl', function () {
 
   // instantiate controller
   var MenuCtrl;
-  beforeEach(inject(function ($controller) {
-    MenuCtrl = $controller('MenuCtrl');
+  beforeEach(inject(function (_$controller_) {
+    MenuCtrl = _$controller_;
   }));
-
-  it('should do something', function () {
-    expect(!!MenuCtrl).toBe(true);
-  });
 
 });

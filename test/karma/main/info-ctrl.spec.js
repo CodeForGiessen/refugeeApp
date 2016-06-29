@@ -9,12 +9,8 @@ describe('module: main, controller: InfoCtrl', function () {
 
   // instantiate controller
   var InfoCtrl;
-  beforeEach(inject(function ($controller) {
-    InfoCtrl = $controller('InfoCtrl');
+  beforeEach(inject(function (_$controller_) {
+    InfoCtrl = _$controller_;
   }));
-
-  it('should do something', function () {
-    expect(!!InfoCtrl).toBe(true);
-  });
 
 });

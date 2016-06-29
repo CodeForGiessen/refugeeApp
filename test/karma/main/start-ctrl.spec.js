@@ -9,12 +9,15 @@ describe('module: main, controller: StartCtrl', function () {
 
   // instantiate controller
   var StartCtrl;
-  beforeEach(inject(function ($controller) {
-    StartCtrl = $controller('StartCtrl');
+  var scope;
+  beforeEach(inject(function ($controller, $rootScope) {
+    scope = $rootScope.$new();
+    StartCtrl = $controller('StartCtrl', {$scope: scope});
   }));
 
-  it('should do something', function () {
-    expect(!!StartCtrl).toBe(true);
+  describe('valid?', function () {
+    it('should be valid', function () {
+      expect(!!StartCtrl).toBe(true);
+    });
   });
-
 });

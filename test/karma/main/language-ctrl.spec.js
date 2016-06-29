@@ -9,12 +9,9 @@ describe('module: main, controller: LanguageCtrl', function () {
 
   // instantiate controller
   var LanguageCtrl;
-  beforeEach(inject(function ($controller) {
-    LanguageCtrl = $controller('LanguageCtrl');
+  beforeEach(inject(function (_$controller_) {
+    LanguageCtrl = _$controller_;
   }));
 
-  it('should do something', function () {
-    expect(!!LanguageCtrl).toBe(true);
-  });
 
 });

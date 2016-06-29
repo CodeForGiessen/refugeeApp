@@ -9,9 +9,10 @@ describe('module: main, controller: DashCtrl', function () {
 
   // instantiate controller
   var DashCtrl;
-  var $scope = {};
-  beforeEach(inject(function ($controller) {
-    DashCtrl = $controller('DashCtrl', {$scope: $scope});
+  var scope;
+  beforeEach(inject(function ($controller, $rootScope) {
+    scope = $rootScope.$new();
+    DashCtrl = $controller('DashCtrl', {$scope: scope});
   }));
 
   it('should do something', function () {
