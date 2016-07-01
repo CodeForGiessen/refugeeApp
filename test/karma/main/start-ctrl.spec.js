@@ -20,4 +20,13 @@ describe('module: main, controller: StartCtrl', function () {
       expect(!!StartCtrl).toBe(true);
     });
   });
+
+  describe('setting the right language', function () {
+    it('should call setLang function', function () {
+      spyOn(StartCtrl, 'setLang');
+      var langkey = 'en_US';
+      StartCtrl.setLang(langkey);
+      expect(StartCtrl.setLang).toHaveBeenCalledWith(langkey);
+    });
+  });
 });

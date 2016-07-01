@@ -19,4 +19,22 @@ describe('module: main, controller: AboutCtrl', function () {
     expect(!!AboutCtrl).toBe(true);
   });
 
+  describe('testing aboutcontroller functions', function () {
+    it('should get the right rating', function () {
+      expect(AboutCtrl.rating).toBeDefined();
+      AboutCtrl.rating = 3;
+      expect(AboutCtrl.rating).toEqual(3);
+    });
+
+    it('should have a valid feedback model', function () {
+      expect(AboutCtrl.formdata).toBeDefined();
+      AboutCtrl.formdata.email = 'john@stark.king';
+      AboutCtrl.formdata.rating = 5;
+      AboutCtrl.formdata.text = 'Test...test...test';
+      expect(AboutCtrl.formdata.email).toEqual('john@stark.king');
+      expect(AboutCtrl.formdata.rating).toEqual(5);
+      expect(AboutCtrl.formdata.text).toEqual('Test...test...test');
+    });
+  });
+
 });

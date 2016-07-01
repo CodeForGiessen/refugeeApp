@@ -1,6 +1,6 @@
 'use strict';
 
-describe('module: main, controller: GuidelineCtrl', function () {
+xdescribe('module: main, controller: GuidelineCtrl', function () {
 
   // load the controller's module
   beforeEach(module('main'));
