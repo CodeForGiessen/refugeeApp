@@ -9,9 +9,18 @@ describe('module: main, controller: LanguageCtrl', function () {
 
   // instantiate controller
   var LanguageCtrl;
-  beforeEach(inject(function (_$controller_) {
-    LanguageCtrl = _$controller_;
+  var scope;
+  beforeEach(inject(function ($controller, $rootScope) {
+    scope = $rootScope.$new();
+    LanguageCtrl = $controller('LanguageCtrl', {$scope: scope});
   }));
 
-
+  describe('testing language function', function () {
+    it('should call changeLang function', function () {
+      spyOn(scope, 'changeLang');
+      var langkey = 'de_DE';
+      scope.changeLang(langkey);
+      expect(scope.changeLang).toHaveBeenCalledWith(langkey);
+    });
+  });
 });

@@ -9,8 +9,30 @@ describe('module: main, controller: MenuCtrl', function () {
 
   // instantiate controller
   var MenuCtrl;
-  beforeEach(inject(function (_$controller_) {
-    MenuCtrl = _$controller_;
+  var scope;
+  beforeEach(inject(function ($controller, $rootScope) {
+    scope = $rootScope.$new();
+    MenuCtrl = $controller('MenuCtrl', {$scope: scope});
   }));
+
+  describe('valid?', function () {
+    xit('should be valid', function () {
+      expect(!!MenuCtrl).toBe(true);
+    });
+  });
+
+  describe('testing functions', function () {
+    xit('should call setLangFlag function', function () {
+      spyOn(scope, 'setLangFlag');
+      scope.setLangFlag();
+      expect(scope.setLangFlag).toHaveBeenCalled();
+    });
+
+    xit('should call loadContent function', function () {
+      spyOn(scope, 'loadContent');
+      scope.loadContent();
+      expect(scope.loadContent).toHaveBeenCalled();
+    });
+  });
 
 });

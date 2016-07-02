@@ -9,8 +9,25 @@ describe('module: main, controller: InfoCtrl', function () {
 
   // instantiate controller
   var InfoCtrl;
-  beforeEach(inject(function (_$controller_) {
-    InfoCtrl = _$controller_;
+  var scope;
+  beforeEach(inject(function ($controller, $rootScope) {
+    scope = $rootScope.$new();
+    InfoCtrl = $controller('InfoCtrl', {$scope: scope});
   }));
 
+  describe('testing functions', function () {
+    it('should call openlink function', function () {
+      spyOn(scope, 'openLink');
+      var link = 'http://www.google.de';
+      scope.openLink(link);
+      expect(scope.openLink).toHaveBeenCalledWith(link);
+    });
+
+    it('should call opencall function', function () {
+      spyOn(scope, 'openCall');
+      var number = '064132523';
+      scope.openCall(number);
+      expect(scope.openCall).toHaveBeenCalledWith(number);
+    });
+  });
 });
