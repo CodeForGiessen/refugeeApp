@@ -8,9 +8,9 @@ angular.module('main')
         $log.log('is first start');
         this.deviceData = $cordovaDevice.getDevice();
 
-        return $http.post(Config.ENV.SERVER_URL + "/stats", {'device': this.deviceData})
-          .then (function (response) {
-            if(response.status === 201){
+        return $http.post(Config.ENV.SERVER_URL + '/stats', {'device': this.deviceData})
+          .then(function (response) {
+            if (response.status === 201) {
               window.localStorage.setItem('firstStart', 'false');
               return response.status;
             }

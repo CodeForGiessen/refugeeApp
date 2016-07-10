@@ -42,7 +42,7 @@ angular.module('main', [
       })
       .state('main.guideline', {
         url: '/guideline',
-        cache: false,
+        cache: true,
         views: {
           'pageContent': {
             templateUrl: 'main/templates/guideline.html',

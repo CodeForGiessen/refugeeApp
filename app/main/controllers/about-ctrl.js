@@ -5,10 +5,11 @@ angular.module('main')
     this.ENV = Config.ENV;
     var feedbackUrl = this.ENV.SERVER_URL + '/feedback';
 
+    $scope.form = {};
     this.rating = {};
     this.rating.max = 5;
 
-    this.formdata = {
+    $scope.formdata = {
       email: '',
       rating: -1,
       text: ' '
@@ -18,7 +19,7 @@ angular.module('main')
      */
     this.sendFeedback = function () {
       //this.clearFields();
-      if (this.formdata.email === undefined || this.formdata.rating === -1) {
+      if ($scope.formdata.email === '' || $scope.formdata.rating === -1) {
         $translate(['FORM_VERIFY_TITLE', 'FORM_VERIFY_TEXT', 'OK_BUTTON'])
           .then(function (translations) {
             $ionicPopup.alert({
@@ -33,13 +34,14 @@ angular.module('main')
       } else {
         $ionicLoading.show();
 
-        return $http.post(feedbackUrl, {'feedback': this.formdata})
+        return $http.post(feedbackUrl, {'feedback': $scope.formdata})
           .then(function (response) {
               if (response.status === 201) {
                 $translate(['TOAST_FEEDBACK_SEND'])
                   .then(function (translations) {
                     toastr.success(translations.TOAST_FEEDBACK_SEND);
                   });
+                $scope.clearFields();
                 return response.status;
               }
             },
@@ -59,15 +61,9 @@ angular.module('main')
     /**
      *
      */
-    this.clearFields = function () {
-      //var formElement = document.getElementById('feedbackForm');
-      //var angularElement = angular.element(formElement);
-      //angularElement.scope().clearFields();
-      //var emailInput = document.getElementById('email');
-      //var angularInput = angular.element(emailInput);
-
-      //var rating = document.getElementById('textarea').clear();
-      //this.formdata = angular.copy(feedbackForm);
+    $scope.clearFields = function () {
+      $scope.formdata = angular.copy($scope.form.feedbackForm);
+      $scope.form.feedbackForm.$setPristine();
     };
 
     /**

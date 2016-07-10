@@ -25,6 +25,13 @@ angular.module('main')
     };
 
     /**
+     * Check the internet connection and return connection type.
+     */
+    var checkConnection = function () {
+      return navigator.connection.type;
+    };
+
+    /**
      * Load new content from the server.
      */
     $scope.loadContent = function () {
@@ -58,13 +65,6 @@ angular.module('main')
         Guidelinedata.getAllGuidesToLang(langKey);
         Guidelinedata.getAllCategories();
       }
-    };
-
-    /**
-     * Check the internet connection and return connection type.
-     */
-    var checkConnection = function () {
-      return navigator.connection.type;
     };
 
     /**
