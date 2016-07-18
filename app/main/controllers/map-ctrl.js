@@ -80,8 +80,9 @@ angular.module('main')
     defaults: {
         tileLayer: 'main/assets/images/mapTiles/{z}/{x}/{y}.png',
         maxZoom: 15,
+        minZoom: 12,
         tileLayerOptions: {
-          attribution: '© Mapbox © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          attribution: '© Mobile Atlas Creator © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
           //detectRetina: true,
           //reuseTiles: true,
           //id: 'toxic2302.63a131f3',
