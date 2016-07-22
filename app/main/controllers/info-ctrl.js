@@ -9,7 +9,7 @@ angular.module('main')
       {
         title: 'Gesundheit',
         subtitle: 'Gießen und Umgebung',
-        imageUrl: '',
+        imageUrl: 'main/assets/images/hospital.png',
         category: [
           {
             group: 'Wichtige Nummern',
@@ -51,9 +51,9 @@ angular.module('main')
               },
               {
                 spec: 'Nummer',
-                title: 'Testanrfu',
+                title: 'Testanruf',
                 location: '',
-                tel: '0641/13097275',
+                tel: '064113097275',
                 url: ''
               }
             ]
@@ -90,55 +90,44 @@ angular.module('main')
                 url: 'http://vitos-giessen-marburg.de'
               }
             ]
-          },
-          {
-            group: 'Hausärzte',
-            items: [
-              {
-                spec: 'Hausarzt',
-                title: 'Dr. med. Mustermann',
-                location: 'Musterstraße 4, 35390 Gießen',
-                tel: '0641/12345',
-                url: ''
-              },
-              {
-                spec: 'Hausarzt',
-                title: 'Dr. med. Mustermann',
-                location: 'Musterstraße 4, 35390 Gießen',
-                tel: '',
-                url: 'www.musterarzt.de'
-              }
-            ]
-          },
-          {
-            group: 'Frauenärzte',
-            items: [{
-              spec: 'Frauenarzt',
-              title: 'Dr. med. Musterfrau',
-              location: 'Musterstraße 5, 35390 Gießen',
-              tel: '',
-              url: ''
-            }
-            ]
           }
-        ],
-
-        links: [
-          {
-            title: 'Ärztliche Versorgung',
-            url: 'http://lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_deutsch.pdf'
-          },
-          {
-            title: 'Ärztliche Versorgung (Brochure)',
-            url: 'http://lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Broschuere_aerztliche_Versorgung.pdf'
-          }
+          // {
+          //   group: 'Hausärzte',
+          //   items: [
+          //     {
+          //       spec: 'Hausarzt',
+          //       title: 'Dr. med. Mustermann',
+          //       location: 'Musterstraße 4, 35390 Gießen',
+          //       tel: '0641/12345',
+          //       url: ''
+          //     },
+          //     {
+          //       spec: 'Hausarzt',
+          //       title: 'Dr. med. Mustermann',
+          //       location: 'Musterstraße 4, 35390 Gießen',
+          //       tel: '',
+          //       url: 'www.musterarzt.de'
+          //     }
+          //   ]
+          // },
+          // {
+          //   group: 'Frauenärzte',
+          //   items: [{
+          //     spec: 'Frauenarzt',
+          //     title: 'Dr. med. Musterfrau',
+          //     location: 'Musterstraße 5, 35390 Gießen',
+          //     tel: '',
+          //     url: ''
+          //   }
+          //   ]
+          // }
         ],
         show: false
       },
       {
         title: 'Behörden',
         subtitle: 'Gießen',
-        imageUrl: '',
+        imageUrl: 'main/assets/images/bank.png',
         category: [
           {
             group: 'Rathäuser',
@@ -147,15 +136,22 @@ angular.module('main')
                 spec: '',
                 title: 'Rathaus Gießen',
                 location: 'Berliner Platz 1, 35390 Gießen',
-                tel: '',
-                url: ''
+                tel: '06413060',
+                url: 'https://giessen.de'
               },
               {
                 spec: '',
-                title: 'Rathaus Wetzlar',
-                location: 'Musterstraße 4, 35390 Wetzlar',
-                tel: '',
-                url: ''
+                title: 'Stadtbüro Wetzlar',
+                location: 'Ernst-Leitz-Straße 30 , 35578 Wetzlar',
+                tel: '06441990',
+                url: 'http://wetzlar.de'
+              },
+              {
+                spec: '',
+                title: 'Stadtbüro Marburg',
+                location: 'Frauenbergstraße 35, 35039 Marburg',
+                tel: '064212011801',
+                url: 'https://marburg.de'
               }
             ]
           },
@@ -165,21 +161,63 @@ angular.module('main')
               spec: '',
               title: 'Landkreis Gießen',
               location: 'Riversplatz 1-9, 35394 Gießen',
-              tel: '',
+              tel: '064193900',
               url: 'https://lkgi.de'
             }
             ]
           }
         ],
-
-        links: [
+        show: false
+      },
+      {
+        title: 'Links',
+        subtitle: 'Gießen',
+        imageUrl: 'main/assets/images/cursor.png',
+        category: [
           {
-            title: '',
-            url: ''
+            group: 'Gesundheit',
+            items: [
+              {
+                lang: 'DE',
+                title: 'Medizinische Versorgung',
+                url: 'http://lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_deutsch.pdf'
+              },
+              {
+                lang: 'EN',
+                title: 'Health care',
+                url: 'https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_englisch.pdf'
+              },
+              {
+                lang: 'FR',
+                title: 'Health care (French)',
+                url: 'https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_franzoesisch.pdf'
+              },
+              {
+                lang: 'TR',
+                title: 'Health care (Turkish)',
+                url: 'https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_tuerkisch.pdf'
+              },
+              {
+                lang: 'AR',
+                title: 'Health care (Arabic)',
+                url: 'https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_arabisch.pdf'
+              },
+              {
+                lang: 'FA',
+                title: 'Health care (Farsi)',
+                url: 'https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_farsi.pdf'
+              }
+            ]
           },
           {
-            title: '',
-            url: ''
+            group: 'Asylverfahren',
+            items: [
+              {
+              lang: '',
+              title: 'Asylinformationen',
+              url: 'https://lkgi.de'
+            }
+            ]
           }
         ],
         show: false
@@ -201,14 +239,19 @@ angular.module('main')
      * @param number
      */
     $scope.openCall = function (number) {
-      window.plugins.CallNumber.callNumber(number)
-        .onSuccess(function () {
-          //console.log('success');
-        })
-        .onError(function () {
-          //todo: toastr ausgabe
-          //console.log('error');
-        });
+      // window.plugins.CallNumber.callNumber()
+      //   .onSuccess(function () {
+      //     //console.log('success');
+      //   })
+      //   .onError(function () {
+      //     //todo: toastr ausgabe
+      //     //console.log('error');
+      //   }, number, true);
+      window.plugins.CallNumber.callNumber(function(){
+        //success logic goes here
+      }, function(){
+        //error logic goes here
+      }, number);
     };
 
     /**
