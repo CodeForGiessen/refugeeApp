@@ -32,21 +32,21 @@ angular.module('main')
                 spec: 'Nummer',
                 title: 'Giftnotruf',
                 location: '',
-                tel: '06131/19240',
+                tel: '0613119240',
                 url: ''
               },
               {
                 spec: 'Nummer',
                 title: 'Notruf für vergewaltigte und belästigte Mädchen und Frauen',
                 location: '',
-                tel: '0641/73343',
+                tel: '064173343',
                 url: ''
               },
               {
                 spec: 'Nummer',
                 title: 'Notruf für Schwangere und Mütter mit Neugeborenen in Not',
                 location: '',
-                tel: '0800/4560789',
+                tel: '08004560789',
                 url: ''
               },
               {
@@ -65,62 +65,32 @@ angular.module('main')
                 spec: 'Klinik',
                 title: 'Evangelisches Krankenhaus',
                 location: 'Paul-Zipp-Straße 171, 35398 Giessen',
-                tel: '0641/9606-0',
+                tel: '064196060',
                 url: 'http://ekm-gi.de'
               },
               {
                 spec: 'Klinik',
                 title: 'St. Josefs Krankenhaus / Balserische Stiftung',
                 location: 'Wilhelmstraße 7, 35392 Giessen',
-                tel: '0641/7002-0  (Standort St. Josefs Krankenhaus),  0641 7952-0 (Standort Balserische Stiftung)',
+                tel: '064170020  (Standort St. Josefs Krankenhaus),  064179520 (Standort Balserische Stiftung)',
                 url: 'http://jok-gi.de'
               },
               {
                 spec: 'Klinik',
                 title: 'Uniklinik Giessen und Marburg',
                 location: 'Rudolf-Buchheim-Straße 8, 35394 Giessen',
-                tel: '0641/985-0',
+                tel: '06419850',
                 url: 'http://ukgm.de'
               },
               {
                 spec: 'Klinik',
                 title: 'Vitos Klinik für Psychiatrie und Psychotherapie Gießen (KPP)',
                 location: 'Licher Straße 106, 35394 Giessen',
-                tel: '0641/403-0',
+                tel: '06414030',
                 url: 'http://vitos-giessen-marburg.de'
               }
             ]
           }
-          // {
-          //   group: 'Hausärzte',
-          //   items: [
-          //     {
-          //       spec: 'Hausarzt',
-          //       title: 'Dr. med. Mustermann',
-          //       location: 'Musterstraße 4, 35390 Gießen',
-          //       tel: '0641/12345',
-          //       url: ''
-          //     },
-          //     {
-          //       spec: 'Hausarzt',
-          //       title: 'Dr. med. Mustermann',
-          //       location: 'Musterstraße 4, 35390 Gießen',
-          //       tel: '',
-          //       url: 'www.musterarzt.de'
-          //     }
-          //   ]
-          // },
-          // {
-          //   group: 'Frauenärzte',
-          //   items: [{
-          //     spec: 'Frauenarzt',
-          //     title: 'Dr. med. Musterfrau',
-          //     location: 'Musterstraße 5, 35390 Gießen',
-          //     tel: '',
-          //     url: ''
-          //   }
-          //   ]
-          // }
         ],
         show: false
       },
