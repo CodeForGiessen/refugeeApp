@@ -1,4 +1,4 @@
-#**Code for Giessen - RefugeeApp**[![Build Status](https://travis-ci.org/CodeForGiessen/refugeeApp.svg?branch=master)](https://travis-ci.org/CodeForGiessen/refugeeApp)
+#**Code for Giessen - RefugeeApp** [![Build Status](https://travis-ci.org/CodeForGiessen/refugeeApp.svg?branch=master)](https://travis-ci.org/CodeForGiessen/refugeeApp)
 
 #Introduction
 This project is a frontend application that works with the corresponding ![backend](https://github.com/CodeForGiessen/refugeeService).
