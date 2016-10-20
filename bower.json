@@ -5,16 +5,17 @@
     "angular-animate": "~1.5.0",
     "angular-sanitize": "~1.5.0",
     "angular-ui-router": "~0.2.15",
-    "ngCordova": "~0.1.17-alpha",
+    "ngCordova": "~0.1.27-alpha",
     "angular-dynamic-locale": "~0.1.27",
     "angular-translate": "~2.11.0",
     "angular-translate-loader-static-files": "~2.11.0",
     "localforage": "~1.4.0",
-    "angular-translate-storage-local": "^2.11.0",
+    "angular-translate-storage-local": "~2.11.0",
+    "angular-translate-storage-cookie": "~2.11.0",
     "leaflet": "^0.7.7",
     "angular-leaflet-directive": "^0.10.0",
     "leaflet.markercluster": "^0.5.0",
-    "angular-toastr": "^1.7.0",
+    "angular-toastr": "^2.1.1",
     "Materialize": "materialize#^0.97.6",
     "ionic-rating": "^0.3.0"
   },
@@ -30,3 +31,4 @@
   "name": "refugees-giessen",
   "private": true
 }
+

@@ -1,7 +1,12 @@
-#**Code for Giessen - RefugeeApp** [![Build Status](https://travis-ci.org/CodeForGiessen/refugeeApp.svg?branch=master)](https://travis-ci.org/CodeForGiessen/refugeeApp)
+#**Code for Giessen - RefugeeApp**
+[![Build Status](https://travis-ci.org/CodeForGiessen/refugeeApp.svg?branch=master)](https://travis-ci.org/CodeForGiessen/refugeeApp)
+[![devDependencies Status](https://david-dm.org/CodeForGiessen/refugeeApp/dev-status.svg)](https://david-dm.org/CodeForGiessen/refugeeApp?type=dev)
+[![Coverage Status](https://coveralls.io/repos/github/CodeForGiessen/refugeeApp/badge.svg?branch=master)](https://coveralls.io/github/CodeForGiessen/refugeeApp?branch=master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/7553c0940dd942b1be0b1f424cee3f68)](https://www.codacy.com/app/toxic2376/refugeeApp?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=CodeForGiessen/refugeeApp&amp;utm_campaign=Badge_Grade)
+[![Inline docs](http://inch-ci.org/github/CodeForGiessen/refugeeApp.svg?branch=master)](http://inch-ci.org/github/CodeForGiessen/refugeeApp)
 
 #Introduction
-This project is a frontend application that works with the corresponding ![backend](https://github.com/CodeForGiessen/refugeeService).
+This project is a frontend application that works with the corresponding [backend](https://github.com/CodeForGiessen/refugeeService).
 
 This project was generated with Generator-M-Ionic v1.8.0. For more info visit the [repository](https://github.com/mwaylabs/generator-m-ionic) or check out the README below.
 
