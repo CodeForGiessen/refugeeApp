@@ -2,6 +2,9 @@
 angular.module('main')
   .controller('DashCtrl', function ($scope, $q, Guidelineservice, $log, $window, $cordovaDevice, $http, Config) {
 
+    /**
+     *
+     */
     document.addEventListener('deviceready', function () {
       $log.log(window.localStorage.getItem('firstStart'));
       if ($window.cordova && window.localStorage.getItem('firstStart') === 'true') {
