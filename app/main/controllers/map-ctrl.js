@@ -72,12 +72,12 @@ angular.module('main')
 
 
     angular.extend($scope, {
-        centerGiessen: {
-          lat: 50.583732,
-          lng: 8.678344,
-          zoom: 13
-        },
-    defaults: {
+      centerGiessen: {
+        lat: 50.583732,
+        lng: 8.678344,
+        zoom: 13
+      },
+      defaults: {
         tileLayer: 'main/assets/images/mapTiles/{z}/{x}/{y}.png',
         maxZoom: 15,
         minZoom: 12,
@@ -89,36 +89,36 @@ angular.module('main')
           //accessToken: 'pk.eyJ1IjoidG94aWMyMzAyIiwiYSI6ImNpbmcweTlhZzAwOTl2aGx4aHpjYzRydmgifQ.wvgrxPQEtbPxJs2HK0tBTg'
         }
       },
-        markers: {
-          rathaus: {
-            lat: 50.58395531171265,
-            lng: 8.679912686347961,
-            focus: true,
-            draggable: false,
-            icon: localIcons.authIcon
-          },
-          polizeiGi: {
-            lat: 50.58432998347547,
-            lng: 8.680889010429382,
-            focus: true,
-            draggable: false,
-            icon: localIcons.policeIcon
-          },
-          uniKlinik: {
-            lat: 50.57527571694196,
-            lng: 8.666152954101562,
-            focus: true,
-            draggable: false,
-            icon: localIcons.hospitalIcon
-          },
-          stJosefKlinik: {
-            lat: 50.579302321268386,
-            lng: 8.668395280838013,
-            focus: true,
-            draggable: false,
-            icon: localIcons.hospitalIcon
-          }
+      markers: {
+        rathaus: {
+          lat: 50.58395531171265,
+          lng: 8.679912686347961,
+          focus: true,
+          draggable: false,
+          icon: localIcons.authIcon
+        },
+        polizeiGi: {
+          lat: 50.58432998347547,
+          lng: 8.680889010429382,
+          focus: true,
+          draggable: false,
+          icon: localIcons.policeIcon
+        },
+        uniKlinik: {
+          lat: 50.57527571694196,
+          lng: 8.666152954101562,
+          focus: true,
+          draggable: false,
+          icon: localIcons.hospitalIcon
+        },
+        stJosefKlinik: {
+          lat: 50.579302321268386,
+          lng: 8.668395280838013,
+          focus: true,
+          draggable: false,
+          icon: localIcons.hospitalIcon
         }
+      }
     });
 
     /*$scope.markerCluster = L.markerClusterGroup();

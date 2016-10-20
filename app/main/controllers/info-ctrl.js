@@ -183,10 +183,10 @@ angular.module('main')
             group: 'Asylverfahren',
             items: [
               {
-              lang: '',
-              title: 'Asylinformationen',
-              url: 'https://lkgi.de'
-            }
+                lang: '',
+                title: 'Asylinformationen',
+                url: 'https://lkgi.de'
+              }
             ]
           }
         ],
@@ -217,9 +217,9 @@ angular.module('main')
       //     //todo: toastr ausgabe
       //     //console.log('error');
       //   }, number, true);
-      window.plugins.CallNumber.callNumber(function(){
+      window.plugins.CallNumber.callNumber(function () {
         //success logic goes here
-      }, function() {
+      }, function () {
         //error logic goes here
       }, number);
     };
