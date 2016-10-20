@@ -219,7 +219,7 @@ angular.module('main')
       //   }, number, true);
       window.plugins.CallNumber.callNumber(function(){
         //success logic goes here
-      }, function(){
+      }, function() {
         //error logic goes here
       }, number);
     };

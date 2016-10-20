@@ -58,7 +58,7 @@ angular.module('main')
               });
 
               confirmPopup.then(function (res) {
-                console.log(res);
+                //console.log(res);
               });
             });
         }
