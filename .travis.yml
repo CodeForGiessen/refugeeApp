@@ -22,3 +22,6 @@ install:
 branches:
   only:
     - master
+
+notifications:
+  slack: oklabgi:g8CTO3fWd4m2LMIZ2AQ5uHQo
