@@ -229,7 +229,18 @@ angular.module('main', [
       FEEDBACK_CARD_LASTNAME: 'soyadınız ',
       FEEDBACK_CARD_MESSAGE_PLACEHOLDER: 'mesajınızı buraya yazın...',
       DEVELOPER_CARD_TITLE: 'geliştirici',
-      LICENSE_CARD_TITLE: 'lisans'
+      LICENSE_CARD_TITLE: 'lisans',
+      IMPRINT_CARD_TITLE: 'Baskı bilgileri',
+      CHANGE_LANG_INFO: 'Dili değiştirmek isterseniz, bütün kapsam yeniden indirilecekdir.',
+      FORM_VERIFY_TITLE: 'Hata',
+      FORM_VERIFY_TEXT: 'Sizin e-posta vea değerlendirme bulunmamakdadir',
+      TOAST_FEEDBACK_SEND: 'Geri bildirim yolanmişdir',
+      TOAST_FEEDBACK_NOTSEND: 'Göndermekte hata ',
+      TOAST_CHANGED_LANG: 'Dil başarılı cevrilmişdir ',
+      TOAST_CHANGED_LANG_NOT: 'Dil cevrilememişdir ',
+      TOAST_DOWNLOAD_SUCCESS: 'Başarılı güncelleme ',
+      TOAST_DOWNLOAD_UPDATE: 'Bütun bilgiler aktüel',
+      TOAST_DOWNLOAD_ERROR: 'Bilgileri yüklerken hata cıkdı'
     });
 
     //arabic translation
@@ -273,14 +284,14 @@ angular.module('main', [
     });
 
     //french translation
-    $translateProvider.translations('fr_FR', {
+    /*$translateProvider.translations('fr_FR', {
       LANG_DE: 'Deutsch',
       LANG_EN: 'English',
       LANG_TR: 'Türkçe',
       LANG_AR: 'العربية',
       LANG_FR: 'français'
       //LANG_AF: 'فارسی'
-    });
+    });*/
 
     //farsi translation
     /*$translateProvider.translations('fa_AF', {
