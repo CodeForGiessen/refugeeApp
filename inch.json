@@ -1,0 +1,13 @@
+{
+  "files": {
+    "included": [
+      "app/main/**/*.js",
+      "app/app.js"
+    ],
+    "excluded": [
+      "app/bower_components/**/*.js",
+      "app/plugins/**/*.js",
+      "app/.tmp/**/*.js"
+    ]
+  }
+}
