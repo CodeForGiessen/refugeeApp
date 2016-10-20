@@ -9,7 +9,13 @@ describe('module: main, controller: MapCtrl', function () {
 
   // instantiate controller
   var MapCtrl;
-  beforeEach(inject(function (_$controller_) {
-    MapCtrl = _$controller_;
+  var scope;
+  beforeEach(inject(function ($controller, $rootScope) {
+    scope = $rootScope.$new();
+    MapCtrl = $controller('MapCtrl', {$scope: scope});
   }));
+
+  it('should do something', function () {
+    expect(!!MapCtrl).toBe(true);
+  });
 });
