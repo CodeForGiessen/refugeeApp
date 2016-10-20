@@ -22,7 +22,13 @@ angular.module('main')
      */
     this.findAllGuidelines = function () {
       var guides = localStorage.getItem('guidelines_' + this.getLangKey());
-      return JSON.parse(guides);
+
+      if (guides !== '[]'){
+        return JSON.parse(guides);
+      } else {
+        var guidesEng = localStorage.getItem('guidelines_en_US');
+        return JSON.parse(guidesEng);
+      }
     };
 
       /**
@@ -31,9 +37,17 @@ angular.module('main')
        */
     this.findGuidelinesByCatID = function (catID) {
       var guidelines = localStorage.getItem('guidelines_' + this.getLangKey());
-      return JSON.parse(guidelines).filter(function (guideline) {
-        return guideline.category === catID;
-      });
+
+      if (guidelines !== '[]') {
+        return JSON.parse(guidelines).filter(function (guideline) {
+          return guideline.category === catID;
+        });
+      } else {
+        var guidelinesEng = localStorage.getItem('guidelines_en_US');
+        return JSON.parse(guidelinesEng).filter(function (guideline) {
+          return guideline.category === catID;
+        });
+      }
     };
 
     /**

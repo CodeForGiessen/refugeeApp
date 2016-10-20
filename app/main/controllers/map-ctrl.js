@@ -1,50 +1,6 @@
 'use strict';
 angular.module('main')
   .controller('MapCtrl', function ($scope) {
-
-    /*angular.extend($scope, {
-     tiles: {},
-     center: {
-     lat: 50.583732,
-     lng: 8.678344,
-     zoom: 15
-     },
-     marker: {
-     rathausGi: {
-     lat: 50.5837248,
-     lng: 8.6774933,
-     message: 'Rathaus Gießen',
-     focus: true,
-     draggable: false
-     },
-     landKreisGi: {
-     lat: 50.5749114,
-     lng: 8.7074593,
-     message: 'Landkreis Gießen',
-     focus: true,
-     draggable: false
-     },
-     bieberSchaper: {
-     lat: 50.5815077,
-     lng: 8.6709409,
-     message: 'Hausärzte Frau L. Bieber & Dr. M. Schaper',
-     focus: true,
-     draggable: false
-     }
-     },
-     defaults: {
-     scrollWheelZoom: false,
-     tileLayer: 'https://api.mapbox.com/styles/v1/toxic2302/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}',
-     tileLayerOptions: {
-     attribution: '© Mapbox © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-     detectRetina: true,
-     reuseTiles: true,
-     id: 'cinu6ci6p00jmcam0uyhk08y6',
-     accessToken: 'pk.eyJ1IjoidG94aWMyMzAyIiwiYSI6ImNpbmcweTlhZzAwOTl2aGx4aHpjYzRydmgifQ.wvgrxPQEtbPxJs2HK0tBTg'
-     }
-     }
-     });*/
-
     var localIcons = {
       defaultIcon: {
         iconUrl: 'main/assets/images/svgs/marker-15.svg',
@@ -64,56 +20,106 @@ angular.module('main')
       }
     };
 
+    // angular.extend($scope, {
+    //   centerGiessen: {
+    //     lat: 50.583732,
+    //     lng: 8.678344,
+    //     zoom: 12
+    //   },
+    //
+    //   defaults: {
+    //     tileLayer: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}',
+    //     tileLayerOptions: {
+    //       attribution: '© Mapbox © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    //       detectRetina: true,
+    //       reuseTiles: true,
+    //       id: 'toxic2302.63a131f3',
+    //       accessToken: 'pk.eyJ1IjoidG94aWMyMzAyIiwiYSI6ImNpbmcweTlhZzAwOTl2aGx4aHpjYzRydmgifQ.wvgrxPQEtbPxJs2HK0tBTg'
+    //     }
+    //   },
+    //
+    //   markers: {
+    //     rathaus: {
+    //       lat: 50.58395531171265,
+    //       lng: 8.679912686347961,
+    //       focus: true,
+    //       draggable: false,
+    //       icon: localIcons.authIcon
+    //     },
+    //     polizeiGi: {
+    //       lat: 50.58432998347547,
+    //       lng: 8.680889010429382,
+    //       focus: true,
+    //       draggable: false,
+    //       icon: localIcons.policeIcon
+    //     },
+    //     uniKlinik: {
+    //       lat: 50.57527571694196,
+    //       lng: 8.666152954101562,
+    //       focus: true,
+    //       draggable: false,
+    //       icon: localIcons.hospitalIcon
+    //     },
+    //     stJosefKlinik: {
+    //       lat: 50.579302321268386,
+    //       lng: 8.668395280838013,
+    //       focus: true,
+    //       draggable: false,
+    //       icon: localIcons.hospitalIcon
+    //     }
+    //   }
+    // });
+
+
     angular.extend($scope, {
-      centerGiessen: {
-        lat: 50.583732,
-        lng: 8.678344,
-        zoom: 12
-      },
-
-      defaults: {
-        tileLayer: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}',
+        centerGiessen: {
+          lat: 50.583732,
+          lng: 8.678344,
+          zoom: 13
+        },
+    defaults: {
+        tileLayer: 'main/assets/images/mapTiles/{z}/{x}/{y}.png',
+        maxZoom: 15,
+        minZoom: 12,
         tileLayerOptions: {
-          attribution: '© Mapbox © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-          detectRetina: true,
-          reuseTiles: true,
-          id: 'toxic2302.63a131f3',
-          accessToken: 'pk.eyJ1IjoidG94aWMyMzAyIiwiYSI6ImNpbmcweTlhZzAwOTl2aGx4aHpjYzRydmgifQ.wvgrxPQEtbPxJs2HK0tBTg'
+          attribution: '© Mobile Atlas Creator © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          //detectRetina: true,
+          //reuseTiles: true,
+          //id: 'toxic2302.63a131f3',
+          //accessToken: 'pk.eyJ1IjoidG94aWMyMzAyIiwiYSI6ImNpbmcweTlhZzAwOTl2aGx4aHpjYzRydmgifQ.wvgrxPQEtbPxJs2HK0tBTg'
         }
       },
-
-      markers: {
-        rathaus: {
-          lat: 50.58395531171265,
-          lng: 8.679912686347961,
-          focus: true,
-          draggable: false,
-          icon: localIcons.authIcon
-        },
-        polizeiGi: {
-          lat: 50.58432998347547,
-          lng: 8.680889010429382,
-          focus: true,
-          draggable: false,
-          icon: localIcons.policeIcon
-        },
-        uniKlinik: {
-          lat: 50.57527571694196,
-          lng: 8.666152954101562,
-          focus: true,
-          draggable: false,
-          icon: localIcons.hospitalIcon
-        },
-        stJosefKlinik: {
-          lat: 50.579302321268386,
-          lng: 8.668395280838013,
-          focus: true,
-          draggable: false,
-          icon: localIcons.hospitalIcon
+        markers: {
+          rathaus: {
+            lat: 50.58395531171265,
+            lng: 8.679912686347961,
+            focus: true,
+            draggable: false,
+            icon: localIcons.authIcon
+          },
+          polizeiGi: {
+            lat: 50.58432998347547,
+            lng: 8.680889010429382,
+            focus: true,
+            draggable: false,
+            icon: localIcons.policeIcon
+          },
+          uniKlinik: {
+            lat: 50.57527571694196,
+            lng: 8.666152954101562,
+            focus: true,
+            draggable: false,
+            icon: localIcons.hospitalIcon
+          },
+          stJosefKlinik: {
+            lat: 50.579302321268386,
+            lng: 8.668395280838013,
+            focus: true,
+            draggable: false,
+            icon: localIcons.hospitalIcon
+          }
         }
-      }
     });
-
 
     /*$scope.markerCluster = L.markerClusterGroup();
 

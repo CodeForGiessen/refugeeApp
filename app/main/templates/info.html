@@ -2,7 +2,7 @@
   <ion-content>
     <ion-list ng-repeat="info in infos">
       <ion-item class="item-avatar-left grey lighten-4" ui-sref="main.info-detail({index: $index, title: info.title})">
-        <img src="main/assets/images/small-logo1.jpg">
+        <img ng-src="{{info.imageUrl}}">
         <span class="title">{{info.title}}</span>
         <p>{{info.subtitle}}</p>
       </ion-item>

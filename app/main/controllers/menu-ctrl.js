@@ -13,12 +13,12 @@ angular.module('main')
           return 'flag-icon flag-icon-us';
         case 'ar_SY':
           return 'flag-icon flag-icon-sy';
-        case 'fa_AF':
-          return 'flag-icon flag-icon-af';
+        //case 'fa_AF':
+          //return 'flag-icon flag-icon-af';
         case 'tr_TR':
           return 'flag-icon flag-icon-tr';
-        case 'fr_FR':
-          return 'flag-icon flag-icon-fr';
+        //case 'fr_FR':
+          //return 'flag-icon flag-icon-fr';
         default:
           return 'flag-icon flag-icon-us';
       }

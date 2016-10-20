@@ -131,7 +131,7 @@ angular.module('main', [
       LANG_TR: 'Türkçe',
       LANG_AR: 'العربية',
       LANG_FR: 'français',
-      LANG_AF: 'فارسی',
+      // LANG_AF: 'فارسی',
       CHANGELANG_TITLE: 'Sprache ändern',
       DASH_TITLE: 'Übersicht',
       GUIDE_TITLE: 'Leitfaden',
@@ -171,7 +171,7 @@ angular.module('main', [
       LANG_TR: 'Türkçe',
       LANG_AR: 'العربية',
       LANG_FR: 'français',
-      LANG_AF: 'فارسی',
+      // LANG_AF: 'فارسی',
       CHANGELANG_TITLE: 'Change language',
       DASH_TITLE: 'Dashboard',
       GUIDE_TITLE: 'Guidelines',
@@ -197,7 +197,7 @@ angular.module('main', [
       FORM_VERIFY_TEXT: 'Please check your email and/or rating',
       TOAST_FEEDBACK_SEND: 'Feedback data send',
       TOAST_FEEDBACK_NOTSEND: 'Could not send data',
-      TOAST_CHANGED_LANG: 'Successfully changed the language ',
+      TOAST_CHANGED_LANG: 'Language successfully changed ',
       TOAST_CHANGED_LANG_NOT: 'Language did not change ',
       TOAST_DOWNLOAD_SUCCESS: 'Update complete',
       TOAST_DOWNLOAD_UPDATE: 'Already up-to-date',
@@ -211,7 +211,7 @@ angular.module('main', [
       LANG_TR: 'Türkçe',
       LANG_AR: 'العربية',
       LANG_FR: 'français',
-      LANG_AF: 'فارسی',
+      //LANG_AF: 'فارسی',
       CHANGELANG_TITLE: 'dili değiştir',
       DASH_TITLE: 'Özet',
       GUIDE_TITLE: 'davranış kuralları',
@@ -229,7 +229,18 @@ angular.module('main', [
       FEEDBACK_CARD_LASTNAME: 'soyadınız ',
       FEEDBACK_CARD_MESSAGE_PLACEHOLDER: 'mesajınızı buraya yazın...',
       DEVELOPER_CARD_TITLE: 'geliştirici',
-      LICENSE_CARD_TITLE: 'lisans'
+      LICENSE_CARD_TITLE: 'lisans',
+      IMPRINT_CARD_TITLE: 'Baskı bilgileri',
+      CHANGE_LANG_INFO: 'Dili değiştirmek isterseniz, bütün kapsam yeniden indirilecekdir.',
+      FORM_VERIFY_TITLE: 'Hata',
+      FORM_VERIFY_TEXT: 'Sizin e-posta vea değerlendirme bulunmamakdadir',
+      TOAST_FEEDBACK_SEND: 'Geri bildirim yolanmişdir',
+      TOAST_FEEDBACK_NOTSEND: 'Göndermekte hata ',
+      TOAST_CHANGED_LANG: 'Dil başarılı cevrilmişdir ',
+      TOAST_CHANGED_LANG_NOT: 'Dil cevrilememişdir ',
+      TOAST_DOWNLOAD_SUCCESS: 'Başarılı güncelleme ',
+      TOAST_DOWNLOAD_UPDATE: 'Bütun bilgiler aktüel',
+      TOAST_DOWNLOAD_ERROR: 'Bilgileri yüklerken hata cıkdı'
     });
 
     //arabic translation
@@ -239,28 +250,58 @@ angular.module('main', [
       LANG_TR: 'Türkçe',
       LANG_AR: 'العربية',
       LANG_FR: 'français',
-      LANG_AF: 'فارسی'
+      //LANG_AF: 'فارسی'
+      CHANGELANG_TITLE: 'تغيير اللغة',
+      DASH_TITLE: 'نظرة عامة',
+      GUIDE_TITLE: 'دليل',
+      MAP_TITLE: 'خريطة',
+      INFO_TITLE: 'معلومات',
+      ABOUT_TITLE: 'حول',
+      WELCOME_TITLE: 'مرحبا بكم في جيسن',
+      DOWN_CONTENT_TITLE: 'تحميل محتوى جديد',
+      DOWN_CONTENT_TEXT: 'لا يمكن الاتصال بشبكة واي فاي. هل تريد تحميل محتوى جديد على أي حال؟',
+      CANCEL_BUTTON: 'إلغاء',
+      OK_BUTTON: 'حسنا',
+      FEEDBACK_CARD_TITLE: 'ردود الفعل',
+      FEEDBACK_CARD_BUTTON: 'إرسال',
+      FEEDBACK_CARD_NAME: 'الأسم الأول',
+      FEEDBACK_CARD_LASTNAME: 'اسم العائلة',
+      FEEDBACK_CARD_MESSAGE_PLACEHOLDER: 'ادخل هنا رسالتك ...',
+      APP_CARD_TITLE: 'حول التطبيق',
+      DEVELOPER_CARD_TITLE: 'المطور',
+      LICENSE_CARD_TITLE: 'رخصة',
+      IMPRINT_CARD_TITLE: 'بصمة',
+      CHANGE_LANG_INFO: 'من فضلك لاحظ! عند تغيير اللغة بعد ذلك سوف يقوم بتحميل محتوى جديد.',
+      FORM_VERIFY_TITLE: 'خطأ',
+      FORM_VERIFY_TEXT: 'كنت قد قدمت أي بريد إلكتروني أو لا يوجد تصويت.',
+      TOAST_FEEDBACK_SEND: 'وقد أرسلت ردود الفعل',
+      TOAST_FEEDBACK_NOTSEND: 'خطأ إرسال',
+      TOAST_CHANGED_LANG: 'تغير اللغة بنجاح ',
+      TOAST_CHANGED_LANG_NOT: 'لم يتم تغيير اللغة ',
+      TOAST_DOWNLOAD_SUCCESS: 'تحديث ناجح',
+      TOAST_DOWNLOAD_UPDATE: 'جميع البيانات حاليا',
+      TOAST_DOWNLOAD_ERROR: 'خطأ في تحميل البيانات'
     });
 
     //french translation
-    $translateProvider.translations('fr_FR', {
+    /*$translateProvider.translations('fr_FR', {
       LANG_DE: 'Deutsch',
       LANG_EN: 'English',
       LANG_TR: 'Türkçe',
       LANG_AR: 'العربية',
-      LANG_FR: 'français',
-      LANG_AF: 'فارسی'
-    });
+      LANG_FR: 'français'
+      //LANG_AF: 'فارسی'
+    });*/
 
     //farsi translation
-    $translateProvider.translations('fa_AF', {
+    /*$translateProvider.translations('fa_AF', {
       LANG_DE: 'Deutsch',
       LANG_EN: 'English',
       LANG_TR: 'Türkçe',
       LANG_AR: 'العربية',
       LANG_FR: 'français',
       LANG_AF: 'فارسی'
-    });
+    });*/
 
     //set preferred language for translation
     $translateProvider.preferredLanguage('en_US');

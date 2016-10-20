@@ -96,6 +96,18 @@ p {
   padding-top: 0;
 }
 
+/* Rating
+==================================*/
+ul.rating li {
+  display: inline;
+  border: 0px;
+  background: none;
+  padding: 5px 10px;
+}
+ul.rating li i {
+  font-size: 30px;
+}
+
 /* radio
 ====================================*/
 .item-radio input:checked ~ .item-content {

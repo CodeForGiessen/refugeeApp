@@ -19,7 +19,8 @@ angular.module('main')
 
         $q.all([
           Guidelinedata.getAllCategories(),
-          Guidelinedata.getAllGuidesToLang(key)
+          Guidelinedata.getAllGuidesToLang(key),
+          Guidelinedata.getAllGuidesToLang('en_US')
         ])
           .then(function (res) {
             var cat = res[0];

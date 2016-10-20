@@ -9,7 +9,7 @@ angular.module('main')
       {
         title: 'Gesundheit',
         subtitle: 'Gießen und Umgebung',
-        imageUrl: '',
+        imageUrl: 'main/assets/images/hospital.png',
         category: [
           {
             group: 'Wichtige Nummern',
@@ -32,28 +32,28 @@ angular.module('main')
                 spec: 'Nummer',
                 title: 'Giftnotruf',
                 location: '',
-                tel: '06131/19240',
+                tel: '0613119240',
                 url: ''
               },
               {
                 spec: 'Nummer',
                 title: 'Notruf für vergewaltigte und belästigte Mädchen und Frauen',
                 location: '',
-                tel: '0641/73343',
+                tel: '064173343',
                 url: ''
               },
               {
                 spec: 'Nummer',
                 title: 'Notruf für Schwangere und Mütter mit Neugeborenen in Not',
                 location: '',
-                tel: '0800/4560789',
+                tel: '08004560789',
                 url: ''
               },
               {
                 spec: 'Nummer',
-                title: 'Testanrfu',
+                title: 'Testanruf',
                 location: '',
-                tel: '0641/13097275',
+                tel: '064113097275',
                 url: ''
               }
             ]
@@ -65,72 +65,31 @@ angular.module('main')
                 spec: 'Klinik',
                 title: 'Evangelisches Krankenhaus',
                 location: 'Paul-Zipp-Straße 171, 35398 Giessen',
-                tel: '0641/9606-0',
+                tel: '064196060',
                 url: 'http://ekm-gi.de'
               },
               {
                 spec: 'Klinik',
                 title: 'St. Josefs Krankenhaus / Balserische Stiftung',
                 location: 'Wilhelmstraße 7, 35392 Giessen',
-                tel: '0641/7002-0  (Standort St. Josefs Krankenhaus),  0641 7952-0 (Standort Balserische Stiftung)',
+                tel: '064170020  (Standort St. Josefs Krankenhaus),  064179520 (Standort Balserische Stiftung)',
                 url: 'http://jok-gi.de'
               },
               {
                 spec: 'Klinik',
                 title: 'Uniklinik Giessen und Marburg',
                 location: 'Rudolf-Buchheim-Straße 8, 35394 Giessen',
-                tel: '0641/985-0',
+                tel: '06419850',
                 url: 'http://ukgm.de'
               },
               {
                 spec: 'Klinik',
                 title: 'Vitos Klinik für Psychiatrie und Psychotherapie Gießen (KPP)',
                 location: 'Licher Straße 106, 35394 Giessen',
-                tel: '0641/403-0',
+                tel: '06414030',
                 url: 'http://vitos-giessen-marburg.de'
               }
             ]
-          },
-          {
-            group: 'Hausärzte',
-            items: [
-              {
-                spec: 'Hausarzt',
-                title: 'Dr. med. Mustermann',
-                location: 'Musterstraße 4, 35390 Gießen',
-                tel: '0641/12345',
-                url: ''
-              },
-              {
-                spec: 'Hausarzt',
-                title: 'Dr. med. Mustermann',
-                location: 'Musterstraße 4, 35390 Gießen',
-                tel: '',
-                url: 'www.musterarzt.de'
-              }
-            ]
-          },
-          {
-            group: 'Frauenärzte',
-            items: [{
-              spec: 'Frauenarzt',
-              title: 'Dr. med. Musterfrau',
-              location: 'Musterstraße 5, 35390 Gießen',
-              tel: '',
-              url: ''
-            }
-            ]
-          }
-        ],
-
-        links: [
-          {
-            title: 'Ärztliche Versorgung',
-            url: 'http://lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_deutsch.pdf'
-          },
-          {
-            title: 'Ärztliche Versorgung (Brochure)',
-            url: 'http://lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Broschuere_aerztliche_Versorgung.pdf'
           }
         ],
         show: false
@@ -138,7 +97,7 @@ angular.module('main')
       {
         title: 'Behörden',
         subtitle: 'Gießen',
-        imageUrl: '',
+        imageUrl: 'main/assets/images/bank.png',
         category: [
           {
             group: 'Rathäuser',
@@ -147,15 +106,22 @@ angular.module('main')
                 spec: '',
                 title: 'Rathaus Gießen',
                 location: 'Berliner Platz 1, 35390 Gießen',
-                tel: '',
-                url: ''
+                tel: '06413060',
+                url: 'https://giessen.de'
               },
               {
                 spec: '',
-                title: 'Rathaus Wetzlar',
-                location: 'Musterstraße 4, 35390 Wetzlar',
-                tel: '',
-                url: ''
+                title: 'Stadtbüro Wetzlar',
+                location: 'Ernst-Leitz-Straße 30 , 35578 Wetzlar',
+                tel: '06441990',
+                url: 'http://wetzlar.de'
+              },
+              {
+                spec: '',
+                title: 'Stadtbüro Marburg',
+                location: 'Frauenbergstraße 35, 35039 Marburg',
+                tel: '064212011801',
+                url: 'https://marburg.de'
               }
             ]
           },
@@ -165,21 +131,63 @@ angular.module('main')
               spec: '',
               title: 'Landkreis Gießen',
               location: 'Riversplatz 1-9, 35394 Gießen',
-              tel: '',
+              tel: '064193900',
               url: 'https://lkgi.de'
             }
             ]
           }
         ],
-
-        links: [
+        show: false
+      },
+      {
+        title: 'Links',
+        subtitle: 'Gießen',
+        imageUrl: 'main/assets/images/cursor.png',
+        category: [
           {
-            title: '',
-            url: ''
+            group: 'Gesundheit',
+            items: [
+              {
+                lang: 'DE',
+                title: 'Medizinische Versorgung',
+                url: 'http://lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_deutsch.pdf'
+              },
+              {
+                lang: 'EN',
+                title: 'Health care',
+                url: 'https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_englisch.pdf'
+              },
+              {
+                lang: 'FR',
+                title: 'Health care (French)',
+                url: 'https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_franzoesisch.pdf'
+              },
+              {
+                lang: 'TR',
+                title: 'Health care (Turkish)',
+                url: 'https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_tuerkisch.pdf'
+              },
+              {
+                lang: 'AR',
+                title: 'Health care (Arabic)',
+                url: 'https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_arabisch.pdf'
+              },
+              {
+                lang: 'FA',
+                title: 'Health care (Farsi)',
+                url: 'https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_farsi.pdf'
+              }
+            ]
           },
           {
-            title: '',
-            url: ''
+            group: 'Asylverfahren',
+            items: [
+              {
+              lang: '',
+              title: 'Asylinformationen',
+              url: 'https://lkgi.de'
+            }
+            ]
           }
         ],
         show: false
@@ -201,14 +209,19 @@ angular.module('main')
      * @param number
      */
     $scope.openCall = function (number) {
-      window.plugins.CallNumber.callNumber(number)
-        .onSuccess(function () {
-          //console.log('success');
-        })
-        .onError(function () {
-          //todo: toastr ausgabe
-          //console.log('error');
-        });
+      // window.plugins.CallNumber.callNumber()
+      //   .onSuccess(function () {
+      //     //console.log('success');
+      //   })
+      //   .onError(function () {
+      //     //todo: toastr ausgabe
+      //     //console.log('error');
+      //   }, number, true);
+      window.plugins.CallNumber.callNumber(function(){
+        //success logic goes here
+      }, function(){
+        //error logic goes here
+      }, number);
     };
 
     /**
