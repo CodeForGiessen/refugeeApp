@@ -1,7 +1,7 @@
 <ion-view view-title="{{title}}">
   <ion-content>
     <ion-list>
-      <div ng-repeat="info in infos[index].category">
+      <div ng-repeat="info in infos.root[index].category">
         <ion-item class="teal white-text"
                   ng-click="toggleGroup(info)"
                   ng-class="{active: isGroupShown(info)}">

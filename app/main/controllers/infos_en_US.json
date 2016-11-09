@@ -1,0 +1,143 @@
+{
+  "root": [{
+    "lang": "en_US",
+    "title": "Health",
+    "subtitle": "Giessen and surroundings",
+    "imageUrl": "main/assets/images/hospital.png",
+    "category": [{
+      "group": "Useful Numbers",
+      "items": [{
+        "spec": "Nummer",
+        "title": "Firefighter and emergency",
+        "location": "",
+        "tel": "112",
+        "url": ""
+      }, {
+        "spec": "Nummer",
+        "title": "Police",
+        "location": "",
+        "tel": "110",
+        "url": ""
+      }, {
+        "spec": "Nummer",
+        "title": "Toxication emergency",
+        "location": "",
+        "tel": "0613119240",
+        "url": ""
+      }, {
+        "spec": "Nummer",
+        "title": "Notruf für vergewaltigte und belästigte Mädchen und Frauen",
+        "location": "",
+        "tel": "064173343",
+        "url": ""
+      }, {
+        "spec": "Nummer",
+        "title": "Notruf für Schwangere und Mütter mit Neugeborenen in Not",
+        "location": "",
+        "tel": "08004560789",
+        "url": ""
+      }]
+    }, {
+      "group": "Hospitals",
+      "items": [{
+        "spec": "Klinik",
+        "title": "Evangelisches Krankenhaus",
+        "location": "Paul-Zipp-Straße 171, 35398 Giessen",
+        "tel": "064196060",
+        "url": "http://ekm-gi.de"
+      }, {
+        "spec": "Klinik",
+        "title": "St. Josefs Krankenhaus / Balserische Stiftung",
+        "location": "Wilhelmstraße 7, 35392 Giessen",
+        "tel": "064170020  (Standort St. Josefs Krankenhaus),  064179520 (Standort Balserische Stiftung)",
+        "url": "http://jok-gi.de"
+      }, {
+        "spec": "Klinik",
+        "title": "Uniklinik Giessen und Marburg",
+        "location": "Rudolf-Buchheim-Straße 8, 35394 Giessen",
+        "tel": "06419850",
+        "url": "http://ukgm.de"
+      }, {
+        "spec": "Klinik",
+        "title": "Vitos Klinik für Psychiatrie und Psychotherapie Gießen (KPP)",
+        "location": "Licher Straße 106, 35394 Giessen",
+        "tel": "06414030",
+        "url": "http://vitos-giessen-marburg.de"
+      }]
+    }],
+    "show": false
+  }, {
+    "lang": "en_US",
+    "title": "Public authorities ",
+    "subtitle": "Giessen",
+    "imageUrl": "main/assets/images/bank.png",
+    "category": [{
+      "group": "Townhalls",
+      "items": [{
+        "spec": "",
+        "title": "Townhall Giessen",
+        "location": "Berliner Platz 1, 35390 Gießen",
+        "tel": "06413060",
+        "url": "https://giessen.de"
+      }, {
+        "spec": "",
+        "title": "Stadtbüro Wetzlar",
+        "location": "Ernst-Leitz-Straße 30 , 35578 Wetzlar",
+        "tel": "06441990",
+        "url": "http://wetzlar.de"
+      }, {
+        "spec": "",
+        "title": "Stadtbüro Marburg",
+        "location": "Frauenbergstraße 35, 35039 Marburg",
+        "tel": "064212011801",
+        "url": "https://marburg.de"
+      }]
+    }, {
+      "group": "Kreisausschüsse",
+      "items": [{
+        "spec": "",
+        "title": "Landkreis Gießen",
+        "location": "Riversplatz 1-9, 35394 Gießen",
+        "tel": "064193900",
+        "url": "https://lkgi.de"
+      }]
+    }],
+    "show": false
+  }, {
+    "title": "Links",
+    "subtitle": "Giessen",
+    "imageUrl": "main/assets/images/cursor.png",
+    "category": [{
+      "group": "Health",
+      "items": [{
+        "lang": "de_DE",
+        "title": "Medizinische Versorgung",
+        "url": "http://lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_deutsch.pdf"
+      }, {
+        "lang": "en_US",
+        "title": "Health care",
+        "url": "https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_englisch.pdf"
+      }, {
+        "lang": "fr_FR",
+        "title": "Health care (French)",
+        "url": "https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_franzoesisch.pdf"
+      }, {
+        "lang": "tr_TR",
+        "title": "Health care (Turkish)",
+        "url": "https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_tuerkisch.pdf"
+      }, {
+        "lang": "ar_SY",
+        "title": "Health care (Arabic)",
+        "url": "https://www.lkgi.de/images/formulare_downloads/Gesundheit_Soziales_Integration/Fluechtlinge_Asylbewerber/Flyer_medzinische_Versorgung_arabisch.pdf"
+      }]
+    }, {
+      "group": "Asylum",
+      "items": [{
+        "lang": "",
+        "title": "Asylum information",
+        "url": "https://lkgi.de"
+      }]
+    }],
+    "show": false
+  }]
+}

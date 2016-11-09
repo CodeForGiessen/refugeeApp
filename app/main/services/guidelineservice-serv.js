@@ -23,7 +23,7 @@ angular.module('main')
     this.findAllGuidelines = function () {
       var guides = localStorage.getItem('guidelines_' + this.getLangKey());
 
-      if (guides !== '[]'){
+      if (guides !== '[]') {
         return JSON.parse(guides);
       } else {
         var guidesEng = localStorage.getItem('guidelines_en_US');
