@@ -2,13 +2,13 @@ language: node_js
 node_js:
   - 'stable'
   - '5'
-  
+
 before_install:
   - npm install -g bower
-install: 
+install:
 - npm install
-- bower install 
-- gulp --cordova "prepare" --force-build
+#- bower install
+#- gulp --cordova "prepare" --force-build
 #before_script:
 #  - export DISPLAY=:99.0
 #  - sh -e /etc/init.d/xvfb start
@@ -22,4 +22,7 @@ install:
 branches:
   only:
     - master
-    - updateDependencies  
+    - updateDependencies
+
+notifications:
+  slack: oklabgi:g8CTO3fWd4m2LMIZ2AQ5uHQo

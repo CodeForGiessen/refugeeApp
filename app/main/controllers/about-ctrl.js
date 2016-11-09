@@ -44,7 +44,7 @@ angular.module('main')
                 $scope.clearFields();
                 return response.status;
               }
-            },
+          },
             function (response) {
               $translate(['TOAST_FEEDBACK_NOTSEND'])
                 .then(function (translations) {
