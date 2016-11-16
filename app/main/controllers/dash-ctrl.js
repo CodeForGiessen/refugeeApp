@@ -2,6 +2,9 @@
 angular.module('main')
   .controller('DashCtrl', function ($scope, $q, Guidelineservice, $log, $window, $cordovaDevice, $http, Config) {
 
+    /**
+     * Listen at the deviceready event and send device information at the first start.
+     */
     document.addEventListener('deviceready', function () {
       $log.log(window.localStorage.getItem('firstStart'));
       if ($window.cordova && window.localStorage.getItem('firstStart') === 'true') {
@@ -27,7 +30,7 @@ angular.module('main')
 
 
     /**
-     *
+     * Generates a "Message of the Day" with the given guidelines in a selected language.
      * @returns {{title: string, text: string}}
      */
     var getMotd = function () {

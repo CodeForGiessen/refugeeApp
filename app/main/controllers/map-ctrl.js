@@ -1,7 +1,14 @@
 'use strict';
 angular.module('main')
-  .controller('MapCtrl', function ($scope) {
-    var localIcons = {
+  .controller('MapCtrl', function ($scope, $ionicSideMenuDelegate) {
+
+    $ionicSideMenuDelegate.canDragContent(false);
+
+    /**
+     *
+     * @type {{defaultIcon: {iconUrl: string, iconSize: number[]}, authIcon: {iconUrl: string, iconSize: number[]}, policeIcon: {iconUrl: string, iconSize: number[]}, hospitalIcon: {iconUrl: string, iconSize: number[]}}}
+     */
+    /*var localIcons = {
       defaultIcon: {
         iconUrl: 'main/assets/images/svgs/marker-15.svg',
         iconSize: [38, 95]
@@ -18,59 +25,11 @@ angular.module('main')
         iconUrl: 'main/assets/images/svgs/hospital-15.svg',
         iconSize: [38, 95]
       }
-    };
+    };*/
 
-    // angular.extend($scope, {
-    //   centerGiessen: {
-    //     lat: 50.583732,
-    //     lng: 8.678344,
-    //     zoom: 12
-    //   },
-    //
-    //   defaults: {
-    //     tileLayer: 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}',
-    //     tileLayerOptions: {
-    //       attribution: '© Mapbox © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    //       detectRetina: true,
-    //       reuseTiles: true,
-    //       id: 'toxic2302.63a131f3',
-    //       accessToken: 'pk.eyJ1IjoidG94aWMyMzAyIiwiYSI6ImNpbmcweTlhZzAwOTl2aGx4aHpjYzRydmgifQ.wvgrxPQEtbPxJs2HK0tBTg'
-    //     }
-    //   },
-    //
-    //   markers: {
-    //     rathaus: {
-    //       lat: 50.58395531171265,
-    //       lng: 8.679912686347961,
-    //       focus: true,
-    //       draggable: false,
-    //       icon: localIcons.authIcon
-    //     },
-    //     polizeiGi: {
-    //       lat: 50.58432998347547,
-    //       lng: 8.680889010429382,
-    //       focus: true,
-    //       draggable: false,
-    //       icon: localIcons.policeIcon
-    //     },
-    //     uniKlinik: {
-    //       lat: 50.57527571694196,
-    //       lng: 8.666152954101562,
-    //       focus: true,
-    //       draggable: false,
-    //       icon: localIcons.hospitalIcon
-    //     },
-    //     stJosefKlinik: {
-    //       lat: 50.579302321268386,
-    //       lng: 8.668395280838013,
-    //       focus: true,
-    //       draggable: false,
-    //       icon: localIcons.hospitalIcon
-    //     }
-    //   }
-    // });
-
-
+    /**
+     *
+     */
     angular.extend($scope, {
       centerGiessen: {
         lat: 50.583732,
@@ -83,40 +42,71 @@ angular.module('main')
         minZoom: 12,
         tileLayerOptions: {
           attribution: '© Mobile Atlas Creator © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-          //detectRetina: true,
-          //reuseTiles: true,
-          //id: 'toxic2302.63a131f3',
-          //accessToken: 'pk.eyJ1IjoidG94aWMyMzAyIiwiYSI6ImNpbmcweTlhZzAwOTl2aGx4aHpjYzRydmgifQ.wvgrxPQEtbPxJs2HK0tBTg'
         }
       },
       markers: {
         rathaus: {
           lat: 50.58395531171265,
           lng: 8.679912686347961,
+          message: 'Rathaus Giessen',
           focus: true,
-          draggable: false,
-          icon: localIcons.authIcon
+          draggable: false
         },
         polizeiGi: {
           lat: 50.58432998347547,
           lng: 8.680889010429382,
+          message: 'Polizei Giessen Mitte',
           focus: true,
-          draggable: false,
-          icon: localIcons.policeIcon
+          draggable: false
+        },
+        polizeiPraes: {
+          lat: 50.5704367,
+          lng: 8.6841344,
+          message: 'Polizeipräsidium Mittelhessen',
+          focus: true,
+          draggable: false
         },
         uniKlinik: {
           lat: 50.57527571694196,
           lng: 8.666152954101562,
+          message: 'Uniklinikum Giessen(UKGM)',
           focus: true,
-          draggable: false,
-          icon: localIcons.hospitalIcon
+          draggable: false
         },
         stJosefKlinik: {
           lat: 50.579302321268386,
           lng: 8.668395280838013,
+          message: 'St. Josefs Krankenhaus',
           focus: true,
-          draggable: false,
-          icon: localIcons.hospitalIcon
+          draggable: false
+        },
+        evKrankGi: {
+          lat: 50.5906146,
+          lng: 8.6493979,
+          message: 'Evangelisches Krankenhaus Giessen',
+          focus: true,
+          draggable: false
+        },
+        landkreisGi: {
+          lat: 50.5755086,
+          lng: 8.7078234,
+          message: 'Landkreis Giessen',
+          focus: true,
+          draggable: false
+        },
+        heae: {
+          lat: 50.578131,
+          lng: 8.6576524,
+          message: 'Hessische Erstaufnahmeeinrichtung für Flüchtlinge Giessen(HEAE)',
+          focus: true,
+          draggable: false
+        },
+        bahnhofGi: {
+          lat: 50.5806117,
+          lng: 8.6623546,
+          message: 'Bahnhof Giessen',
+          focus: true,
+          draggable: false
         }
       }
     });
@@ -138,7 +128,7 @@ angular.module('main')
      //leafletData.getMap().addLayer($scope.markerCluster);
 
      .then(function (map) {
-     map.attributionControl.setPrefix('<a href="#" onClick="window.open(\'http://leafletjs.com\',\'_system\');return false;">Leaflet</a>');
+     map.attributionControl.setPrefix('<a href='#' onClick='window.open(\'http://leafletjs.com\',\'_system\');return false;'>Leaflet</a>');
      $http.get('scripts/controllers/map.geojson').success(function (data) {
      L.geoJson(data, {
      invert:true
