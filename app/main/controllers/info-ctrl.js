@@ -12,12 +12,12 @@ angular.module('main')
       var langKey = Guidelineservice.getLangKey();
 
       if (langKey === 'de_DE') {
-        $http.get('main/controllers/infos_de_DE.json')
+        $http.get('main/assets/data/infos_de_DE.json')
           .success(function (data) {
             $scope.infos = data;
           });
       } else {
-        $http.get('main/controllers/infos_en_US.json')
+        $http.get('main/assets/data/infos_en_US.json')
           .success(function (data) {
             $scope.infos = data;
           });

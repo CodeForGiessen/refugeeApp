@@ -3,8 +3,8 @@
     <ion-list>
       <div ng-repeat="info in infos.root[index].category">
         <ion-item class="teal white-text"
-                  ng-click="toggleGroup(info)"
-                  ng-class="{active: isGroupShown(info)}">
+                  ng-click="toggleGroup(info)">
+                  <!--ng-class="{active: isGroupShown(info)}">-->
           {{info.group}}
         </ion-item>
         <ion-item class="item-text-wrap item-button-right"
